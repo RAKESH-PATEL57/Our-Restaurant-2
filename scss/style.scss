@@ -70,33 +70,129 @@ html
     display: none;
 }
 
-// .icons i, .icons a
-// {
-//     border: 1px solid var(--border-color);
-//     border-radius: 50%;
-//     -webkit-border-radius: 50%;
-//     -moz-border-radius: 50%;
-//     -ms-border-radius: 50%;
-//     -o-border-radius: 50%;
-//     padding: 1rem;
-//     cursor: pointer;
-//     font-size: 1.6rem;
-//     transition: .3s linear;
-//     -webkit-transition: .3s linear;
-//     -moz-transition: .3s linear;
-//     -ms-transition: .3s linear;
-//     -o-transition: .3s linear;
-//     font-weight: 400;
-// }
-
-// .icons i:hover, .icons a:hover
-// {
-//     background: var(--main-color);
-//     color: var(--sfont-color);
-// }
-
 // header [[[[[[  end ]]]]]]
 
+
+// Cart section [[[[[[  start ]]]]]]
+.cart
+{
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    height: 60%;
+    width: 25%;
+    top: 11%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cart #close-icon
+{
+    color: var(--font-color);
+    font-size: 3.3rem;
+    position: absolute;
+    cursor: pointer;
+}
+
+.cart h1
+{
+    text-align: center;
+    color: var(--font-color);
+    margin-top: .8rem;
+}
+
+.cart .cart-content
+{
+    @include flexbox(flex,unset,unset,column);
+    gap: 1rem;
+    height: 70%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.cart .cart-content::-webkit-scrollbar
+{
+    opacity: 0;
+}
+
+.cart-content .cart-foods
+{
+    @include flexbox(flex,space-between,center,unset);
+    border: 1px solid gray;
+}
+
+.cart-foods .cart-food-details
+{
+    @include flexbox(flex,space-between,center,unset);
+    color: var(--font-color);
+    width: 70%;
+    font-size: 1.3rem;
+}
+
+.cart-food-details img
+{
+    height: 100%;
+    width: 30%;
+    // border: 2px solid red;
+}
+
+.cart-foods .food-quantity
+{
+    display: flex;
+    font-size: 2rem;
+    color: var(--font-color);
+    gap: .5rem;
+    position: absolute;
+    right: 5%;
+}
+
+.food-quantity .quantity
+{
+    border: 1px solid var(--main-color);
+    padding: 0rem .5rem;
+    cursor: pointer;
+    transition: .3s linear;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    -ms-transition: .3s linear;
+    -o-transition: .3s linear;
+}
+
+.food-quantity .quantity:hover
+{
+    color: var(--sfont-color);
+    background: var(--main-color);
+}
+
+.cart .cart-order
+{
+    color: var(--font-color);
+    // border:2px solid red;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+}
+
+.cart-order .Buy-Btn
+{
+    background:var(--main-color);
+    color: var(--sfont-color);
+    border: 1px solid gray;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+// Cart section [[[[[[   end  ]]]]]]
 
 
 // home section [[[[[[  start ]]]]]]
