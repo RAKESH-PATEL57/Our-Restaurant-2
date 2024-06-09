@@ -237,7 +237,7 @@ html
     text-align: center;
 }
 
-.slider-container
+.intro-dishes-container
 {
     // border: 2px solid aqua;
     width: 80%;
@@ -249,7 +249,7 @@ html
     
 }
 
-.slider-container .sl-card
+.intro-dishes-container .intro-dishes-card
 {
     border: 2px solid rgba(128, 128, 128, 0.189);
     height: 100%;
@@ -258,7 +258,7 @@ html
     border-radius: 1rem;
 }
 
-.sl-card .content
+.intro-dishes-card .content
 {
     // border: 2px solid red;
     width: 50%;
@@ -275,7 +275,7 @@ html
     color: var(--user-rating-star-color);
 }
 
-.sl-card img
+.intro-dishes-card img
 {
     height: 18rem;
     width: 20rem;
@@ -285,7 +285,7 @@ html
     // border: 2px solid red;
 }
 
-.sl-card .btn
+.intro-dishes-card .btn
 {
     position: absolute;
     bottom: 10%;
