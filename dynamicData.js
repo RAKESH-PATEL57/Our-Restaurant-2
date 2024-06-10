@@ -42,3 +42,22 @@ function imageLink(value,introDishes)
 
     return link;
 }
+
+let cartContent = document.querySelector(".cart-content");
+
+
+   let btn = document.querySelectorAll(".btn");
+
+   btn.forEach((value,index) => {
+    btn[index].addEventListener("click", (e) => {
+        // console.log(e.target.parentElement);
+    });
+   });
+
+   btn[0].addEventListener("click", (e) => {
+    // console.log(e.target.parentElement.style.border=);
+    e.target.parentElement.style.border= "2px solid aqua";
+});
+
+//    console.log(btn.parentElement);
+
