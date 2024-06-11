@@ -2,17 +2,10 @@
 "use strict"
 import introDishes from "./dishes/introFood.json" with {type: 'json'};
 
-console.log(introDishes);
-
-
-for(let i=0;i<3;i++)
-{
-    console.log(name);
-}
-
+// console.log(introDishes);
 let introDishesContainer = document.querySelector('.intro-dishes-container');
 
-const addDataToHTML = () => {
+const addCartDataToHTML = () => {
     
     introDishesContainer.innerHTML = "";
     if(introDishes.length > 0)
@@ -47,7 +40,7 @@ const addDataToHTML = () => {
     
 }
 
-addDataToHTML();
+addCartDataToHTML();
 
 
 
@@ -63,6 +56,7 @@ function imageLink(product)
 // cart section [[  start  ]]
 
 let cartContent = document.querySelector(".cart-content");
+let cartQuantityInd = document.querySelector(".cartQuantityInd");
 let carts = [];
 
    let btn = document.querySelectorAll(".btn");
@@ -95,39 +89,86 @@ const addToCart = (product_id) => {
         carts[poitionThisProductInCart].quantity = carts[poitionThisProductInCart].quantity + 1;
     }
     displayDataInCart();
+    addCartMemory();  // for saving the data in our browser;
 }   
 
+const addCartMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts));
+}
+
+if(localStorage.getItem('cart')) {
+    carts = JSON.parse(localStorage.getItem('cart'));
+    displayDataInCart();
+} 
 
 function displayDataInCart()
 {
     cartContent.innerHTML = '';
+    let totalQuantity = 0;
     if(carts.length > 0)
     {
         carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('cart-foods');
+            newCart.dataset.id = cart.product_id;
             let positionProduct = introDishes.findIndex((value) => value.id == cart.product_id);
             let info = introDishes[positionProduct];
             newCart.innerHTML = `
             <div class="cart-food-details">
                 <img class="cart-food-image" src="${info.image}" alt="">
                 <h2 class="cart-food-name">${info.dishName}</h2>
-                <p class="cart-food-price">${info.price}</p>
+                <p class="cart-food-price">${info.price * cart.quantity}</p>
             </div>
             <div class="food-quantity">
-                <p class="dec-quantity quantity">-</p>
-                <p class="cart-food-num">1</p>
-                <p class="inc-quantity quantity">+</p>
+                <p class="dec-quantity quantity minus">-</p>
+                <span class="cart-food-num">${cart.quantity}</span>
+                <p class="inc-quantity quantity plus">+</p>
             </div>`;
             cartContent.appendChild(newCart);
         })
     }
-}
-//    btn[0].addEventListener("click", (e) => {
-//     // console.log(e.target.parentElement.style.border=);
-//     e.target.parentElement.style.border= "2px solid aqua";
-// });
 
-// cart section [[  end  ]]
-//    console.log(btn.parentElement);
+    cartQuantityInd.innerText = totalQuantity;
+}
+
+cartContent.addEventListener('click', (event) => {
+     let positionClick = event.target;
+     if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus'))
+     {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if(positionClick.classList.contains('plus')) {
+            type = 'plus';
+        }
+
+        changeQuantity(product_id, type);
+     }
+});
+
+const changeQuantity = (product_id, type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+    if(positionItemInCart >= 0)
+    {
+        switch( type) {
+            case 'plus':
+            carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+            break;
+
+            default:
+            let valueChange = carts[positionItemInCart].quantity - 1;
+            if(valueChange > 0){
+                carts[positionItemInCart].quantity = valueChange;
+            }
+            else
+            {
+                carts.splice(positionItemInCart, 1);
+            }
+            break;
+        }
+    }
+    addCartMemory();
+    displayDataInCart();
+}
+
 
