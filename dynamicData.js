@@ -18,7 +18,7 @@ const addCartDataToHTML = () => {
     <div class="content">
     <div class="dish-details">
     <h1>${product.dishName}</h1>
-    <p>${product.price}</p>
+    <p>${product.price}₹</p>
     </div>
     <div class="rating">
     <i class="fas fa-star"></i>
@@ -56,6 +56,7 @@ function imageLink(product)
 // cart section [[  start  ]]
 
 let cartContent = document.querySelector(".cart-content");
+let totalPrice = document.querySelector(".total-price");
 let cartQuantityInd = document.querySelector(".cartQuantityInd");
 let carts = [];
 
@@ -105,20 +106,24 @@ function displayDataInCart()
 {
     cartContent.innerHTML = '';
     let totalQuantity = 0;
+    let totalCartPrice = 0;
     if(carts.length > 0)
     {
         carts.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity;
+            let positionProduct = introDishes.findIndex((value) => value.id == cart.product_id);
+            let info = introDishes[positionProduct];
+            totalCartPrice = totalCartPrice + (info.price * cart.quantity);
+          
             let newCart = document.createElement('div');
             newCart.classList.add('cart-foods');
             newCart.dataset.id = cart.product_id;
-            let positionProduct = introDishes.findIndex((value) => value.id == cart.product_id);
-            let info = introDishes[positionProduct];
+            console.log(totalCartPrice);
             newCart.innerHTML = `
             <div class="cart-food-details">
-                <img class="cart-food-image" src="${info.image}" alt="">
-                <h2 class="cart-food-name">${info.dishName}</h2>
-                <p class="cart-food-price">${info.price * cart.quantity}</p>
+            <img class="cart-food-image" src="${info.image}" alt="">
+            <h2 class="cart-food-name">${info.dishName}</h2>
+                <p class="cart-food-price">${info.price * cart.quantity}₹</p>
             </div>
             <div class="food-quantity">
                 <p class="dec-quantity quantity minus">-</p>
@@ -130,6 +135,7 @@ function displayDataInCart()
     }
 
     cartQuantityInd.innerText = totalQuantity;
+    totalPrice.innerText = `${totalCartPrice}₹`;
 }
 
 cartContent.addEventListener('click', (event) => {
