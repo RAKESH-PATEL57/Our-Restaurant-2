@@ -16,6 +16,12 @@
   --user-rating-star-color:yellow;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -62,35 +68,49 @@ html {
   display: none;
 }
 
-.cart {
+.cart-container {
   border: 2px solid rgb(255, 255, 255);
   position: absolute;
   z-index: 100;
   right: 0;
-  height: 60%;
-  width: 25%;
   top: 11%;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  width: 0%;
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
 }
 
-.cart #close-icon {
+.cart-container.cart-show-hide {
+  opacity: 1;
+  pointer-events: auto;
+  height: 60%;
+  width: 25%;
+}
+
+.cart-container #close-icon {
   color: var(--font-color);
   font-size: 3.3rem;
   position: absolute;
   cursor: pointer;
 }
 
-.cart h1 {
+.cart-container h1 {
   text-align: center;
   color: var(--font-color);
   margin-top: 0.8rem;
 }
 
-.cart .cart-content {
+.cart-container .cart-content {
   display: flex;
   justify-content: unset;
   align-items: unset;
@@ -101,7 +121,7 @@ html {
   position: relative;
 }
 
-.cart .cart-content::-webkit-scrollbar {
+.cart-container .cart-content::-webkit-scrollbar {
   opacity: 0;
 }
 
@@ -120,7 +140,6 @@ html {
   flex-direction: unset;
   color: var(--font-color);
   width: 70%;
-  font-size: 1.3rem;
 }
 
 .cart-food-details img {
@@ -128,18 +147,35 @@ html {
   width: 30%;
 }
 
+.cart-food-details .cart-food-name {
+  font-size: 1.6rem;
+  width: 40%;
+  text-align: center;
+}
+
+.cart-food-details .cart-food-price {
+  font-size: 1.6rem;
+}
+
 .cart-foods .food-quantity {
   display: flex;
+  justify-content: space-between;
   font-size: 2rem;
   color: var(--font-color);
   gap: 0.5rem;
-  position: absolute;
   right: 5%;
+  border: 2px solid rgba(0, 255, 255, 0.397);
+  width: 21%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
 }
 
 .food-quantity .quantity {
   border: 1px solid var(--main-color);
   padding: 0rem 0.5rem;
+  color: var(--sfont-color);
+  background: var(--main-color);
   cursor: pointer;
   transition: 0.3s linear;
   -webkit-transition: 0.3s linear;
@@ -148,12 +184,7 @@ html {
   -o-transition: 0.3s linear;
 }
 
-.food-quantity .quantity:hover {
-  color: var(--sfont-color);
-  background: var(--main-color);
-}
-
-.cart .cart-order {
+.cart-container .cart-order {
   color: var(--font-color);
   font-size: 1.5rem;
   display: flex;
@@ -175,6 +206,16 @@ html {
   cursor: pointer;
 }
 
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .home {
   position: relative;
   height: 100vh;
@@ -183,16 +224,6 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.home img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .home::before {
@@ -280,4 +311,18 @@ html {
   -ms-transform: translate(-50%, 0%);
   -o-transform: translate(-50%, 0%);
   cursor: pointer;
+}
+
+.dishes {
+  min-height: 100vh;
+  position: relative;
+}
+
+.dishes::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.778);
+  z-index: 5;
 }/*# sourceMappingURL=style.css.map */
