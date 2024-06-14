@@ -237,7 +237,7 @@ img {
 
 .intro {
   color: var(--font-color);
-  z-index: 10;
+  z-index: 100;
 }
 
 .intro h1 {
@@ -318,11 +318,19 @@ img {
   position: relative;
 }
 
+.dishes img {
+  z-index: -2;
+}
+
+.dishes p {
+  color: white;
+}
+
 .dishes::before {
   content: "";
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.778);
-  z-index: 5;
+  background: rgba(0, 0, 0, 0.805);
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
