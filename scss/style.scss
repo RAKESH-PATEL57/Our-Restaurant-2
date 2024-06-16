@@ -7,6 +7,7 @@
     text-decoration: none;
     list-style: none;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root
@@ -323,10 +324,14 @@ img
 {
     height: 18rem;
     width: 20rem;
-    // position: absolute;
+    //position: absolute;
     left: 14rem;
     top: -8rem;
-    // border: 2px solid red;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .intro-dishes-card .btn
@@ -357,6 +362,7 @@ img
 .dishes
 {
     min-height: 100vh;
+    @include flexbox(flex,center,unset,unset);
     position: relative;
 }
 
@@ -366,10 +372,12 @@ img
 }
 
 
-.dishes p
+.dishes .heading
 {
     // z-index: 100;
-    color: white;
+    color: var(--font-color);
+    font-size: 4rem;
+    text-align: center;
 }
 
 .dishes::before
@@ -380,6 +388,75 @@ img
     width: 100%;
     background: rgba(0, 0, 0, 0.805);
     z-index:-1;
+}
+
+.dishes .dishes-container
+{
+    // border: 2px solid aqua;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    // border: 2px solid red;
+}
+
+.dishes-container .dishes-list
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.dishes-list .dishes-card
+{
+  border: 2px solid gray;
+  position: relative;
+  height: 25rem;
+  width: 22rem;
+  @include flexbox(flex,end,center,column);
+  padding: 5rem 0rem;
+  backdrop-filter: blur(10px);
+  color: var(--font-color);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.dishes-card img
+{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid aqua;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+}
+
+.btn
+{
+    padding: .5rem .8rem;
+    background: transparent;
+    color: var(--font-color);
+    cursor: pointer;
+    position: absolute;
+    bottom: 5%;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 // dish section [[[[[[   end  ]]]]]]
