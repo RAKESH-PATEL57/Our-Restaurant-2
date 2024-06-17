@@ -1,13 +1,17 @@
 // front page dishes
 "use strict"
 import introDishes from "./dishes/introFood.json" with {type: 'json'};
+import allDishes from "./dishes/allDishes.json" with {type: 'json'};
 
 // console.log(introDishes);
 let introDishesContainer = document.querySelector('.intro-dishes-container');
+let allDishesContainer = document.querySelector('.dishes-list');
 
 const addCartDataToHTML = () => {
     
     introDishesContainer.innerHTML = "";
+    allDishesContainer.innerHTML = "";
+    
     if(introDishes.length > 0)
     {
         introDishes.forEach((product) =>{
@@ -29,14 +33,30 @@ const addCartDataToHTML = () => {
     </div>
     </div>
     <img src="${imageLink(product)}" alt="chicken">
-    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy Now</button>
     
     `
     
     introDishesContainer.appendChild(newProduct);
     // introDishesContainer.insertAdjacentHTML("beforeend", newProduct);
-});
-}
+     });
+    }
+    if(allDishes.length > 0)
+    {
+        allDishes.forEach((product) => {
+            let allNewProduct = document.createElement("div");
+            allNewProduct.classList.add("dishes-card");
+            allNewProduct.dataset.id = product.id;
+
+            allNewProduct.innerHTML = `
+            <img src="${imageLink(product)}" alt="">
+                    <h1>Noodle</h1>
+                    <h1>5$</h1>
+                    <button class="btn">Add to cart</button>
+            `
+            allDishesContainer.appendChild(allNewProduct);
+        });
+    }
     
 }
 
@@ -61,6 +81,7 @@ let cartQuantityInd = document.querySelector(".cartQuantityInd");
 let carts = [];
 
    let btn = document.querySelectorAll(".btn");
+   console.log(btn.length);
 
    btn.forEach((value,index) => {
        btn[index].addEventListener("click", (e) => {
@@ -111,8 +132,8 @@ function displayDataInCart()
     {
         carts.forEach(cart => {
             totalQuantity = totalQuantity + cart.quantity;
-            let positionProduct = introDishes.findIndex((value) => value.id == cart.product_id);
-            let info = introDishes[positionProduct];
+            let positionProduct = allDishes.findIndex((value) => value.id == cart.product_id);
+            let info = allDishes[positionProduct];
             totalCartPrice = totalCartPrice + (info.price * cart.quantity);
           
             let newCart = document.createElement('div');
