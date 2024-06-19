@@ -160,7 +160,12 @@ html
 {
     height: 100%;
     width: 30%;
-    // border: 2px solid red;
+    border-radius: 50%;
+    //border: 2px solid red;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 .cart-food-details .cart-food-name
@@ -240,18 +245,20 @@ html
 
 // Cart section [[[[[[   end  ]]]]]]
 
-img
+// home section [[[[[[  start ]]]]]]
+
+
+.bg
 {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    // object-fit: cover;
     // z-index: -1;
 }
 
-// home section [[[[[[  start ]]]]]]
 .home
 {
     position: relative;
@@ -429,6 +436,7 @@ img
 {
     position: absolute;
     left: 50%;
+    top: 10%;
     transform: translate(-50%);
     width: 12rem;
     height: 12rem;
@@ -437,7 +445,7 @@ img
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    border: 2px solid aqua;
+    // border: 2px solid aqua;
     -webkit-transform: translate(-50%);
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
@@ -457,6 +465,19 @@ img
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
+    border: 2px solid var(--font-color);
+    transition: .3s linear;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    -ms-transition: .3s linear;
+    -o-transition: .3s linear;
+}
+
+.btn:hover
+{
+    background: var(--main-color);
+    color: var(--sfont-color);
+    border-color: var(--sfont-color);
 }
 
 // dish section [[[[[[   end  ]]]]]]
