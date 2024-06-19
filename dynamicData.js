@@ -52,7 +52,7 @@ const addCartDataToHTML = () => {
             <img src="${imageLink(product)}" alt="">
                     <h1>Noodle</h1>
                     <h1>5$</h1>
-                    <button class="btn">Add to cart</button>
+                    <button class="btn allDishesBtn">Add to cart</button>
             `
             allDishesContainer.appendChild(allNewProduct);
         });
@@ -80,11 +80,11 @@ let totalPrice = document.querySelector(".total-price");
 let cartQuantityInd = document.querySelector(".cartQuantityInd");
 let carts = [];
 
-   let btn = document.querySelectorAll(".btn");
-   console.log(btn.length);
+   let allDishesBtn = document.querySelectorAll(".allDishesBtn");
+//    console.log(btn.length);
 
-   btn.forEach((value,index) => {
-       btn[index].addEventListener("click", (e) => {
+    allDishesBtn.forEach((value,index) => {
+        allDishesBtn[index].addEventListener("click", (e) => {
         let product_id = e.target.parentElement.dataset.id;
         addToCart(product_id);
     });
