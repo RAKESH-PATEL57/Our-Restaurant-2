@@ -218,6 +218,8 @@ html {
   left: 0;
   height: 100%;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .home {
@@ -290,6 +292,7 @@ html {
 .intro-dishes-card img {
   height: 18rem;
   width: 20rem;
+  position: absolute;
   left: 14rem;
   top: -8rem;
   border-radius: 50%;
