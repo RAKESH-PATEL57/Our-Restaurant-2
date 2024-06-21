@@ -39,34 +39,53 @@
   </div>
 
     <section id="home" class="home">
-        <img src="./images/bg-2.png" loading="lazy" id="bg" alt="background-image">
-        
+        <img class="bg" src="./images/bg-2.png" loading="lazy" id="bg" alt="background-image">
         <div class="intro">
             <h1>Our Restaurant</h1>
         </div>
-        <div class="intro-dishes-container">
-            
-
-        </div>
-        
+        <div class="intro-dishes-container"></div>    
     </section>
     
     <section id="dishes" class="dishes">
-        <img src="./images/bg-3.jpg" loading="lazy" alt="background-image">
-        
+        <img class="bg" src="./images/bg-3.jpg" loading="lazy" alt="background-image">
         <div class="dishes-container">
-            <h1>Popular Dishes</h1>
-            <div class="dishes-list">
-                <div class="dishes-card">
-                    <img src="./images/dishes/dishes2.jpg" alt="">
-                    <h1>Noodle</h1>
-                    <h1>5$</h1>
-                    <!-- <button>Add to cart</button> -->
+            <h1 class="heading">Popular Dishes</h1>
+            <div class="dishes-list"></div>
+        </div>
+    </section>
+
+    <div class="review" id="review">
+        <h1>Review</h1>
+        <div class="review-filter">
+            <select name="" id="">
+                <option value="">Recent</option>
+                <option value="">Top</option>
+                <option value="">Worst</option>
+            </select>
+        </div>
+        <div class="user-reviews">
+            <div class="review-card">
+                <div class="user-details-review">
+                    <div class="left-user-details">
+                        <img src="" alt="">
+                        <p class="userName">Rakesh Patel</p>
+                    </div>
+                    <div class="rating"></div>
+                </div>
+                <div class="user-opinion">
+                     <textarea name="" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus necessitatibus, nulla assumenda placeat? Qui sequi beatae dignissimos tempora. Dolores eos natus ducimus distinctio consequatur commodi expedita iste qui!</textarea>
                 </div>
             </div>
         </div>
+        <div class="bottom-review-container">
 
-    </section>
+            <button>Write Review</button>
+            <div class="perticular-user-review">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="rating"></div>
+            </div>
+        </div>
+    </div>
 
 
   <script src="./script.js"></script>
