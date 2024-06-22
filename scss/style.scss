@@ -28,13 +28,18 @@ body
     overflow-x: hidden;
 }
 
-
 html
 {
     font-size: 62.5%;
     // overflow-x: hidden;
     // scroll-padding-top: 5.5rem;
 }
+
+// section
+// {
+//     background: #00092fd6;
+//     // border: 2px solid red;
+// }
 
 // header [[[[[[  start ]]]]]]
 
@@ -256,7 +261,7 @@ html
     height: 100%;
     width: 100%;
     object-fit: cover;
-    // z-index: -1;
+    z-index: -2;
 }
 
 .home
@@ -373,10 +378,10 @@ html
     position: relative;
 }
 
-.dishes img 
-{
-    z-index: -2;
-}
+// .dishes img 
+// {
+//     z-index: -2;
+// }
 
 
 .dishes .heading
@@ -480,4 +485,26 @@ html
     border-color: var(--sfont-color);
 }
 
-// dish section [[[[[[   end  ]]]]]]
+// dishes section [[[[[[   end  ]]]]]]
+
+// Review section [[[[[[   Start  ]]]]]]
+.review
+{
+    position: relative;
+    min-height: 50vh;
+    z-index: 100;
+}
+.review::before
+{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.805);
+    z-index: -1;
+}
+h1
+{
+    color: var(--font-color);
+}
+// Review section [[[[[[    end   ]]]]]]
