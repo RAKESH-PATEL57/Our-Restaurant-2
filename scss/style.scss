@@ -556,4 +556,21 @@ select option
     width: 90%;
 }
 
+.user-reviews-container .review-card
+{
+    border: 2px solid aqua;
+    color: var(--font-color);
+}
+
+.user-reviews-container .review-card .user-details-review .left-user-details .review-img
+{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
 // Review section [[[[[[    end   ]]]]]]
