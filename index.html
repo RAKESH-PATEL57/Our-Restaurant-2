@@ -1,94 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Restaurant</title>
-    <link rel="stylesheet" href="./scss/style.css">
-      <!--  For icons  -->
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel='stylesheet'>
-  
-</head>
-<body>
+    <link rel="stylesheet" href="./scss/style.css" />
+    <!--  For icons  -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="header-content">    
-            <a href="#" class="logo">Our Restaurant</a>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#dishes">Dishes</a></li>
-                    <li><a href="#review">Review</a></li>
-                    <li><a href="#order">Order</a></li>
-                    <a id="cartIcon" href="#" class='bx bx-cart'><span class="cartQuantityInd">0</span></a>
-                </ul>
-                
-            </nav>
-        </div>
-  </header>
+      <div class="header-content">
+        <a href="#" class="logo">Our Restaurant</a>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#dishes">Dishes</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#order">Order</a></li>
+            <a id="cartIcon" href="#" class="bx bx-cart"
+              ><span class="cartQuantityInd">0</span></a
+            >
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <div class="cart-container">
-    <i class='bx bx-x' id="close-icon"></i>
-    <h1>Cart Items</h1>
-    <div class="cart-content">
+    <div class="cart-container">
+      <i class="bx bx-x" id="close-icon"></i>
+      <h1>Cart Items</h1>
+      <div class="cart-content"></div>
+      <div class="cart-order">
+        <p>total price :- <span class="total-price"></span></p>
+        <button class="Buy-Btn">Buy Now</button>
+      </div>
     </div>
-    <div class="cart-order">
-        <p>total price :- <span class="total-price"></span></p>  
-        <button class="Buy-Btn">Buy Now</button>  
-    </div>
-  </div>
 
     <section id="home" class="home">
-        <img class="bg" src="./images/bg-2.png" loading="lazy" id="bg" alt="background-image">
-        <div class="intro">
-            <h1>Our Restaurant</h1>
-        </div>
-        <div class="intro-dishes-container"></div>    
-    </section>
-    
-    <section id="dishes" class="dishes">
-        <img class="bg" src="./images/bg-3.jpg" loading="lazy" alt="background-image">
-        <div class="dishes-container">
-            <h1 class="heading">Popular Dishes</h1>
-            <div class="dishes-list"></div>
-        </div>
+      <img
+        class="bg"
+        src="./images/bg-2.png"
+        loading="lazy"
+        id="bg"
+        alt="background-image"
+      />
+      <div class="intro">
+        <h1>Our Restaurant</h1>
+      </div>
+      <div class="intro-dishes-container"></div>
     </section>
 
-    <div class="review" id="review">
-        <h1>Review</h1>
+    <section id="dishes" class="dishes">
+      <img
+        class="bg"
+        src="./images/bg-3.jpg"
+        loading="lazy"
+        alt="background-image"
+      />
+      <div class="dishes-container">
+        <h1 class="heading">Popular Dishes</h1>
+        <div class="dishes-list"></div>
+      </div>
+    </section>
+
+    <section class="review" id="review">
+      <div class="review-content">
+        <img class="bg" src="./images/review-bg.jpg" alt="" />
+        <h1 class="heading">Review</h1>
         <div class="review-filter">
-            <select name="" id="">
-                <option value="">Recent</option>
-                <option value="">Top</option>
-                <option value="">Worst</option>
-            </select>
+          <select name="" id="">
+            <option value="1">Recent</option>
+            <option value="2">Top</option>
+            <option value="3">Worst</option>
+          </select>
         </div>
-        <div class="user-reviews">
-            <div class="review-card">
-                <div class="user-details-review">
-                    <div class="left-user-details">
-                        <img src="" alt="">
-                        <p class="userName">Rakesh Patel</p>
-                    </div>
-                    <div class="rating"></div>
-                </div>
-                <div class="user-opinion">
-                     <textarea name="" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus necessitatibus, nulla assumenda placeat? Qui sequi beatae dignissimos tempora. Dolores eos natus ducimus distinctio consequatur commodi expedita iste qui!</textarea>
-                </div>
+        <div class="user-reviews-container">
+          <div class="review-card">
+            <div class="user-details-review">
+              <div class="left-user-details">
+                <img class="review-img" src="./images/bg-2.png" alt="review-img" />
+                <p class="userName">Rakesh Patel</p>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
             </div>
+            <div class="user-opinion">
+              <textarea name="" id="" cols="30" rows="10" disabled>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus necessitatibus, nulla assumenda placeat? Qui sequi beatae dignissimos tempora. Dolores eos natus ducimus distinctio consequatur commodi expedita iste qui!</textarea
+              >
+            </div>
+          </div>
         </div>
         <div class="bottom-review-container">
-
-            <button>Write Review</button>
-            <div class="perticular-user-review">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <div class="rating"></div>
+          <button class="review-btn">Write Review</button>
+          <div class="particular-user-review">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div class="rating">
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
+                <i class="fas fa-star stars"></i>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-
-  <script src="./script.js"></script>
-  <script type="module" src="./dynamicData.js"></script>
-</body>
+    <script src="./script.js"></script>
+    <script type="module" src="./dynamicData.js"></script>
+  </body>
 </html>
