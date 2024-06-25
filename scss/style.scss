@@ -597,4 +597,57 @@ select option
     cursor: pointer;
 }
 
+.review-content .bottom-review-container
+{
+    border: 2px solid red;
+    width: 50vw;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-review-container .review-btn
+{
+    border: 2px solid rgb(0, 0, 0);
+    background: aqua;
+    color: black;
+    text-align: center;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.bottom-review-container .particular-user-review
+{
+    border: 2px solid aqua;
+    display: flex;
+    // justify-content: space-between;
+    gap: 7rem;
+    align-items: center;
+    width: 70%;
+    color: var(--font-color);
+}
+
+.particular-user-review
+{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.particular-user-review .stars
+{
+    border: 2px solid red;
+    // z-index: 100;
+}
+
+// .stars:hover
+// {
+//     color: aqua;
+// }
+
 // Review section [[[[[[    end   ]]]]]]
