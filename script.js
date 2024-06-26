@@ -40,4 +40,18 @@ if(starClick == 0)
 
 // review stars section    [[[[[  End   ]]]]]
 
+// highliting the section which is open 
+let section = document.querySelectorAll("nav ul li a");
+
+let initial = 0;
+section.forEach((sec, index) => {
+    section[index].addEventListener("click", () => {
+        section[index].classList.add("active");
+        section[initial].classList.remove("active");
+        console.log(index);
+        initial = index;
+    });
+
+});
+
 
