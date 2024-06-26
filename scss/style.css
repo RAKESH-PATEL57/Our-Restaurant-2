@@ -61,6 +61,10 @@ html {
   gap: 6rem;
 }
 
+ul li a.active {
+  color: aqua;
+}
+
 .header-content .icons-container {
   color: var(--font-color);
 }
@@ -430,7 +434,7 @@ html {
 
 .review {
   position: relative;
-  min-height: 50vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -520,7 +524,6 @@ select option {
 }
 
 .review-content .bottom-review-container {
-  border: 2px solid red;
   width: 50vw;
   align-self: flex-end;
   display: flex;
@@ -543,17 +546,20 @@ select option {
 }
 
 .bottom-review-container .particular-user-review {
-  border: 2px solid aqua;
   display: flex;
   gap: 7rem;
   align-items: center;
   width: 70%;
   color: var(--font-color);
-}
-
-.particular-user-review {
   font-size: 2rem;
   cursor: pointer;
+}
+
+.particular-user-review textarea {
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: var(--font-color);
 }
 
 .particular-user-review .stars {
