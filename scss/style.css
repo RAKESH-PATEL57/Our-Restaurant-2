@@ -14,7 +14,7 @@
   --font-color:rgb(255, 255, 255);
   --sfont-color:rgb(0, 0, 0);
   --border-color:white;
-  --user-rating-star-color:yellow;
+  --user-rating-star-color:#FFE234;
 }
 
 body {
@@ -563,5 +563,13 @@ select option {
 }
 
 .particular-user-review .stars {
-  border: 2px solid red;
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+}
+
+.particular-user-review .stars.toggleActiveStar {
+  color: var(--user-rating-star-color);
 }/*# sourceMappingURL=style.css.map */
