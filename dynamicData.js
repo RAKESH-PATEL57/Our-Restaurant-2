@@ -1,7 +1,8 @@
 // front page dishes
 "use strict"
-import introDishes from "./dishes/introFood.json" with {type: 'json'};
-import allDishes from "./dishes/allDishes.json" with {type: 'json'};
+import introDishes from "./jsonFiles/introFood.json" with {type: 'json'};
+import allDishes from "./jsonFiles/allDishes.json" with {type: 'json'};
+import reviews from "./jsonFiles/reviews.json" with {type: 'json'};
 
 // console.log(introDishes);
 let introDishesContainer = document.querySelector('.intro-dishes-container');
@@ -139,7 +140,7 @@ function displayDataInCart()
             let newCart = document.createElement('div');
             newCart.classList.add('cart-foods');
             newCart.dataset.id = cart.product_id;
-            console.log(totalCartPrice);
+            // console.log(totalCartPrice);
             newCart.innerHTML = `
             <div class="cart-food-details">
             <img class="cart-food-image" src="${info.image}" alt="">
@@ -197,5 +198,41 @@ const changeQuantity = (product_id, type) => {
     addCartMemory();
     displayDataInCart();
 }
+
+// review section   [[[[[[[[[[[      Start     ]]]]]]]]]]]
+
+// let reviewCard = [];   // to-do all reviws store in data base   *************👨‍💻👨‍💻👨‍💻👨‍💻
+
+let userReviewsContainer = document.querySelector(".user-reviews-container");
+console.log(reviews);
+
+reviews.forEach((review, i) => {
+    console.log(reviews[i].image);
+    const reviewCard = `
+    <div class="review-card">
+    <div class="user-details-review">
+      <div class="left-user-details">
+        <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
+        <p class="userName">${reviews[i].name}</p>
+      </div>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <div class="user-opinion">
+      <textarea name="" id="" cols="30" rows="10" disabled>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus necessitatibus, nulla assumenda placeat? Qui sequi beatae dignissimos tempora. Dolores eos natus ducimus distinctio consequatur commodi expedita iste qui!</textarea
+      >
+    </div>
+  </div>
+    `
+    userReviewsContainer.insertAdjacentHTML("afterbegin", reviewCard);
+})
+
+// review section   [[[[[[[[[[[       End      ]]]]]]]]]]]
 
 
