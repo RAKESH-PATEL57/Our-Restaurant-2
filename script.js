@@ -32,4 +32,3 @@ stars.forEach((star, i) => {
     //       star.addEventListener(event, test(i));
     // });
 })
-
