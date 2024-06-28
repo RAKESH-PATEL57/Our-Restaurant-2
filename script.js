@@ -33,17 +33,3 @@ stars.forEach((star, i) => {
     // });
 })
 
-// function test(i) 
-// {
-//     let currentStar = i + 1;
-//     stars.forEach((star, j) => {
-//         if(currentStar >= j+1)
-//         {
-//             star.classList.add("toggleActiveStar");
-//         }
-//         else
-//         {
-//             star.classList.remove("toggleActiveStar");
-//         }
-//     })
-// }
