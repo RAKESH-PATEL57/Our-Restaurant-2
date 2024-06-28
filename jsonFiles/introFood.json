@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "dishName": "Delicious Noodle",
+        "price": "5",
+        "image":"../images/dishes/noodle.png"
+    },
+    {
+        "id":2,
+        "dishName": "Delicious Noodle",
+        "price": "5",
+        "image":"../images/dishes/noodle.png"
+    },
+    {
+        "id":3,
+        "dishName": "Delicious Noodle",
+        "price": "5",
+        "image":"../images/dishes/noodle.png"
+    }
+]

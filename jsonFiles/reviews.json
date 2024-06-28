@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "image":"../images/dishes/review1.jpg",
+        "name": "Rakesh patel",
+        "stars":1,
+        "feedback":"This website is so amazing and the food quality are awesome"
+    },
+    {
+        "id":2,
+        "image":"../images/dishes/review2.jpg",
+        "name": "rohit patel",
+        "stars":4,
+        "feedback":"This website is so amazing and the food quality are awesome"
+    },
+    {
+        "id":3,
+        "image":"../images/dishes/review3.jpg",
+        "name": "priya patel",
+        "stars":5,
+        "feedback":"This website is so amazing and the food quality are awesome"
+    },
+    {
+        "id":4,
+        "image":"../images/dishes/review4.jpg",
+        "name": "Raju patel",
+        "stars":3,
+        "feedback":"This website is so amazing and the food quality are awesome"
+    },
+    {
+        "id":5,
+        "image":"../images/dishes/review5.jpg",
+        "name": "sneha patel",
+        "stars":2,
+        "feedback":"This website is so amazing and the food quality are awesome"
+    }
+]
