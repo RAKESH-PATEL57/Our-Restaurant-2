@@ -588,11 +588,18 @@ select option
 {
     height: 5rem;
     width: 5rem;
+    object-fit: cover;
+    // border: 2px solid red;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
+}
+
+.user-details-review .rating .rev-col-star
+{
+    color: var(--user-rating-star-color);
 }
 
 .review-card .user-opinion textarea
