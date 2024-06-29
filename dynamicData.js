@@ -204,10 +204,10 @@ const changeQuantity = (product_id, type) => {
 // let reviewCard = [];   // to-do all reviws store in data base   *************👨‍💻👨‍💻👨‍💻👨‍💻
 
 let userReviewsContainer = document.querySelector(".user-reviews-container");
-console.log(reviews);
+// console.log(reviews);
 
 reviews.forEach((review, i) => {
-    console.log(reviews[i].image);
+    // console.log(reviews[i].image);
     const reviewCard = `
     <div class="review-card">
     <div class="user-details-review">
@@ -216,11 +216,11 @@ reviews.forEach((review, i) => {
         <p class="userName">${reviews[i].name}</p>
       </div>
       <div class="rating">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+         ${reviewStarsCreating()}
+         ${reviewStarsCreating()}
+         ${reviewStarsCreating()}
+         ${reviewStarsCreating()}
+         ${reviewStarsCreating()}
       </div>
     </div>
     <div class="user-opinion">
@@ -230,8 +230,24 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus 
     </div>
   </div>
     `
-    userReviewsContainer.insertAdjacentHTML("afterbegin", reviewCard);
-})
+    userReviewsContainer.insertAdjacentHTML("beforeend", reviewCard);
+    let reviewStars = document.querySelectorAll('.r-star');
+   let colorStars= document.querySelectorAll(".r-star");
+   for(let i = 1; i<=4;i++)
+   {
+    colorStars[i].style.color= "red";
+   }
+console.log(reviewStars.length);
+});
+
+// star creating and coloring stars 
+function reviewStarsCreating()
+{
+        return (`<i class="fas fa-star r-star"></i>`);
+}
+
+
+
 
 // review section   [[[[[[[[[[[       End      ]]]]]]]]]]]
 
