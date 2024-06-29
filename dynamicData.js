@@ -207,6 +207,7 @@ let userReviewsContainer = document.querySelector(".user-reviews-container");
 // console.log(reviews);
 
 reviews.forEach((review, i) => {
+    let starCount= 1;
     // console.log(reviews[i].image);
     const reviewCard = `
     <div class="review-card">
@@ -216,11 +217,11 @@ reviews.forEach((review, i) => {
         <p class="userName">${reviews[i].name}</p>
       </div>
       <div class="rating">
-         ${reviewStarsCreating()}
-         ${reviewStarsCreating()}
-         ${reviewStarsCreating()}
-         ${reviewStarsCreating()}
-         ${reviewStarsCreating()}
+         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
       </div>
     </div>
     <div class="user-opinion">
@@ -232,20 +233,24 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus 
     `
     userReviewsContainer.insertAdjacentHTML("beforeend", reviewCard);
     let reviewStars = document.querySelectorAll('.r-star');
-   let colorStars= document.querySelectorAll(".r-star");
-   for(let i = 1; i<=4;i++)
-   {
-    colorStars[i].style.color= "red";
-   }
-console.log(reviewStars.length);
+
 });
 
 // star creating and coloring stars 
-function reviewStarsCreating()
-{
-        return (`<i class="fas fa-star r-star"></i>`);
+function reviewStarsCreating(starCount,actualStarNumber)
+{    
+    if(starCount<=actualStarNumber)
+    {
+        return (`<i class="fas fa-star rev-col-star"></i>`); // ex- user gives 4 star then it will colour 4 star
+    }
+    else
+    {
+        return (`<i class="fas fa-star"></i>`);  // ex- if the user give for star out of 5 then 5-4 = 1 star is not coloured
+    }
+    //    let result = (starCount<=actualStarNumber) ?`<i class="fas fa-star rev-col-star"></i>` :(`<i class="fas fa-star"></i>`);
+    //    return result;
+    
 }
-
 
 
 
