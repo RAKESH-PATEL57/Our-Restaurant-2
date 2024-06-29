@@ -370,7 +370,6 @@ ul li a.active {
 
 .dishes-list .dishes-card {
   border: 2px solid gray;
-  border: 2px solid red;
   position: relative;
   height: 25rem;
   width: 22rem;
@@ -406,6 +405,15 @@ ul li a.active {
   -ms-transform: translate(-50%);
   -o-transform: translate(-50%);
   z-index: 10;
+}
+
+.dishes-card h1 {
+  position: absolute;
+  bottom: 6%;
+}
+
+.dishes-card h1:nth-child(2) {
+  bottom: 15%;
 }
 
 .btn {
