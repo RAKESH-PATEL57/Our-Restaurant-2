@@ -428,11 +428,12 @@ ul li a.active
 .dishes-list .dishes-card
 {
   border: 2px solid gray;
+  border: 2px solid red;
   position: relative;
   height: 25rem;
   width: 22rem;
   @include flexbox(flex,end,center,column);
-  padding: 5rem 0rem;
+  //padding: 5rem 0rem;
   backdrop-filter: blur(10px);
   color: var(--font-color);
   border-radius: 1rem;
@@ -440,6 +441,7 @@ ul li a.active
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+  overflow: hidden;
 }
 
 .dishes-card img
@@ -460,6 +462,7 @@ ul li a.active
     -moz-transform: translate(-50%);
     -ms-transform: translate(-50%);
     -o-transform: translate(-50%);
+    z-index: 10;
 }
 
 .btn
@@ -468,8 +471,6 @@ ul li a.active
     background: transparent;
     color: var(--font-color);
     cursor: pointer;
-    position: absolute;
-    bottom: 5%;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -488,6 +489,41 @@ ul li a.active
     background: var(--main-color);
     color: var(--sfont-color);
     border-color: var(--sfont-color);
+}
+
+.viewdetailsBtn
+{
+    position: absolute;
+    top: -20%;
+}
+
+.allDishesBtn
+{
+    position: absolute;
+    bottom: -20%;
+}
+
+.dishes-card:hover .viewdetailsBtn
+{
+    top: 40%;
+    z-index: 200;
+}
+.dishes-card:hover .allDishesBtn
+{
+    bottom: 30%;
+    z-index: 200;
+}
+
+.dishes-list .dishes-card:hover::before
+{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.847);
+    backdrop-filter: blur(10px);
+    // opacity: .5;
+    z-index: 100;
 }
 
 // dishes section [[[[[[   end  ]]]]]]
@@ -584,6 +620,11 @@ select option
     width: 100%;
 }
 
+.user-details-review .left-user-details .userName
+{
+    text-transform: capitalize;
+}
+
 .user-details-review .left-user-details .review-img
 {
     height: 5rem;
@@ -602,12 +643,21 @@ select option
     color: var(--user-rating-star-color);
 }
 
+.review-card .user-opinion
+{
+    border: 2px solid red;
+    
+}
+
 .review-card .user-opinion textarea
 {
     background: transparent;
     color: var(--font-color);
     border: none;
     cursor: pointer;
+    // display: flex;
+    text-align:start;
+    width: max-content;
 }
 
 .review-content .bottom-review-container
