@@ -53,6 +53,7 @@ const addCartDataToHTML = () => {
             <img src="${imageLink(product)}" alt="">
                     <h1>Noodle</h1>
                     <h1>5$</h1>
+                    <button class="btn viewdetailsBtn">View details</button>
                     <button class="btn allDishesBtn">Add to cart</button>
             `
             allDishesContainer.appendChild(allNewProduct);
@@ -226,7 +227,8 @@ reviews.forEach((review, i) => {
     </div>
     <div class="user-opinion">
       <textarea name="" id="" cols="30" rows="10" disabled>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis suscipit ducimus necessitatibus, nulla assumenda placeat? Qui sequi beatae dignissimos tempora. Dolores eos natus ducimus distinctio consequatur commodi expedita iste qui!</textarea
+      ${reviews[i].feedback}
+      </textarea
       >
     </div>
   </div>
