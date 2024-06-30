@@ -8,6 +8,13 @@ import reviews from "./jsonFiles/reviews.json" with {type: 'json'};
 let introDishesContainer = document.querySelector('.intro-dishes-container');
 let allDishesContainer = document.querySelector('.dishes-list');
 
+function ingradientsSpliting(ingradientList)
+{
+
+        return ingradientList.toString().split(" ");
+    // console.log(ingradientList.toString().split(" "));
+}
+
 const addCartDataToHTML = () => {
     
     introDishesContainer.innerHTML = "";
@@ -51,8 +58,14 @@ const addCartDataToHTML = () => {
 
             allNewProduct.innerHTML = `
             <img src="${imageLink(product)}" alt="">
-                    <h1>Noodle</h1>
-                    <h1>5$</h1>
+                    <div class="ingradients-container">
+                    <h2 id="ingradientHeading">Ingradients Used:-</h2>
+                    <p>${ingradientsSpliting(product.ingradient)[0]}</br></p>
+                    <p>${ingradientsSpliting(product.ingradient)[1]}</br></p>
+                    <p>${ingradientsSpliting(product.ingradient)[2]}</br></p>
+                    </div>
+                    <h1>${product.dishName}</h1>
+                    <h1>${product.price}$</h1>
                     <button class="btn viewdetailsBtn">View details</button>
                     <button class="btn allDishesBtn">Add to cart</button>
             `
