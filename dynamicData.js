@@ -55,13 +55,7 @@ const addCartDataToHTML = () => {
                     <h1>${product.price}$</h1>
                     <button class="btn viewdetailsBtn">View details</button>
                     <button class="btn allDishesBtn">Add to cart</button>
-                    <div class="ingradients-container">
-                    <h2 id="ingradientHeading">Ingradients Used:-</h2>
-                    <p>chees,potato,etc</p>
-                    <img src="./images/dishes/dishes4.png" alt="chicken">
-                    </div>
             `
-
             allDishesContainer.appendChild(allNewProduct);
         });
     }
