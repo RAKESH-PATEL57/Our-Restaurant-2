@@ -440,21 +440,38 @@ ul li a.active {
   border-color: var(--sfont-color);
 }
 
+.ingradients {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.815);
+  height: 100%;
+  width: 100%;
+}
+
+.ingradients h1 {
+  top: 2%;
+  text-align: center;
+  width: 100%;
+}
+
+.ingradients p {
+  top: 15%;
+  gap: 1rem;
+  margin-top: 4rem;
+  display: flex;
+}
+
 .viewdetailsBtn {
   position: absolute;
   bottom: 5%;
   left: 5%;
 }
 
-.allDishesBtn {
+.addToCartBtn {
   position: absolute;
   bottom: 5%;
   right: 5%;
-}
-
-.buyNowBtn {
-  top: -50%;
-  left: 50%;
 }
 
 .review {
