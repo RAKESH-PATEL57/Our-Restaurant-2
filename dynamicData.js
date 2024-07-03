@@ -53,8 +53,14 @@ const addCartDataToHTML = () => {
             <img src="${imageLink(product)}" alt="">
                     <h1>${product.dishName}</h1>
                     <h1>${product.price}$</h1>
+                    <div class="ingradients">
+                         <h1>Ingradients</h1>
+                         <p>${product.ingradient}</p>
+                         <p>${product.ingradient}</p>
+                         <p>${product.ingradient}</p>
+                    </div>
                     <button class="btn viewdetailsBtn">View details</button>
-                    <button class="btn allDishesBtn">Add to cart</button>
+                    <button class="btn addToCartBtn">Add to cart</button>
             `
             allDishesContainer.appendChild(allNewProduct);
         });
