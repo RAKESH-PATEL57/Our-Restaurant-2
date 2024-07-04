@@ -10,6 +10,7 @@
         "dishName": "Delicious Noodle",
         "price": "5",
         "image":"../images/dishes/noodle.png"
+        
     },
     {
         "id":3,

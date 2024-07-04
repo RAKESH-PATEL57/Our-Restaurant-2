@@ -2,61 +2,137 @@
     {
         "id":1,
         "image":"../images/dishes/dishes2.jpg",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "Chicken Critter Salad",
+        "price": "5",
+        "ingradients":[
+            "Crispy Chicken Critters",
+            "Fresh Greens",
+            "Toppings",
+            "Cheddar Cheese",
+            "Hard-Boiled Eggs",
+            "Bacon Bits",
+            "Red Onions",
+            "Dressing"
+        ],
+        "category":"nonveg"
     },
     {
         "id":2,
         "image":"../images/dishes/ds-1.png",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "Hamburger",
+        "price": "5",
+        "ingradients":[
+            "Sesame Seed Bun",
+            "Lettuce",
+            "Tomatoes",
+            "Cheese",
+            "Beef Patty"
+        ],
+        "category":"veg"
     },
     {
         "id":3,
         "image":"../images/dishes/ds-2.png",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "grilled steak with sides",
+        "price": "5",
+         "ingradients":[
+            "Grilled Steak",
+            "Potatoes",
+            "Green Salad"
+        ],
+        "category":"veg"
     },
     {
         "id":4,
         "image":"../images/dishes/dishes5.jpg",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "chicken wings",
+        "price": "5",
+         "ingradients":[
+            "chicken wings",
+            "green lettuce leaves",
+            "red cherry tomatoes"
+        ],
+        "category":"nonveg"
     },
     {
         "id":5,
         "image":"../images/dishes/dishes6.png",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "salad featuring",
+        "price": "5",
+         "ingradients":[
+            "Sliced Avocados",
+            "Strawberries",
+            "Leafy Greens"
+        ],
+        "category":"veg"
     },
     {
         "id":6,
         "image":"../images/dishes/dishes3.png",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "Greek salad",
+        "price": "5",
+         "ingradients":[
+            "Sliced Cucumbers",
+            "Red Onions",
+            "Black Olives",
+            "Feta Cheese",
+            "Green Bell Peppers",
+            "Herbs"
+        ],
+        "category":"veg"
     },
     {
         "id":7,
-        "image":"../images/dishes/dishes8.jpg",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "image":"../images/dishes/dishes7.png",
+        "dishName": "salad with crispy chicken",
+        "price": "5",
+         "ingradients":[
+            "Arugula",
+            "Tomatoes",
+            "Breaded Chicken"
+        ],
+        "category":"nonveg"
     },
     {
         "id":8,
         "image":"../images/dishes/dishes9.jpg",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName":"salad",
+        "price": "5",
+         "ingradients":[
+            "Leafy Greens",
+            "Grilled Chicken",
+            "Cherry tomatoes",
+            "Seeds/Nuts"
+        ],
+        "category":"nonveg"
     },
     {
         "id":9,
         "image":"../images/dishes/dishes10.jpg",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "roasted chicken",
+        "price": "5",
+         "ingradients":[
+            "Chicken",
+            "Salt & Pepper",
+            "Herbs",
+            "Butter/Oil",
+            "Aromatics"
+        ],
+        "category":"nonveg"
     },
     {
         "id":10,
         "image":"../images/dishes/pizaa.png",
-        "dishName": "Delicious Noodle",
-        "price": "5"
+        "dishName": "pizza",
+        "price": "5",
+         "ingradients":[
+            "Pepperoni Slices",
+            "Black Olives",
+            "Red Bell Pepper Rings",
+            "Yellow Bell Pepper Rings",
+            "Melted Cheese",
+            "Tomato Sauce"
+        ],
+        "category":"veg"
     }
 ]
