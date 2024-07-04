@@ -8,6 +8,20 @@ import reviews from "./jsonFiles/reviews.json" with {type: 'json'};
 let introDishesContainer = document.querySelector('.intro-dishes-container');
 let allDishesContainer = document.querySelector('.dishes-list');
 
+function ingradientsList(ingradientsArr)
+{
+    // console.log(ingradientsArr)
+    // ingradientsArr.forEach((e) => {
+    //    return `<p>Rakesh</p>`;
+    // });
+    let rk=``;
+    for(let i=0;i<ingradientsArr.length;i++)
+    {
+        rk += `<li>${ingradientsArr[i]}</li>`;
+    }
+    return rk;
+}
+
 const addCartDataToHTML = () => {
     
     introDishesContainer.innerHTML = "";
@@ -55,11 +69,11 @@ const addCartDataToHTML = () => {
                     <h1>${product.price}$</h1>
                     <div class="ingradients">
                          <h1>Ingradients</h1>
-                         <p>${product.ingradient}</p>
-                         <p>${product.ingradient}</p>
-                         <p>${product.ingradient}</p>
+                         <ul class="ingradientsList">
+                             ${ingradientsList(product.ingradients)}
+                         </ul>
                     </div>
-                    <button class="btn viewdetailsBtn">View details</button>
+                    <button class="btn viewdetailsBtn">Ingradients</button>
                     <button class="btn addToCartBtn">Add to cart</button>
             `
             allDishesContainer.appendChild(allNewProduct);
@@ -69,6 +83,26 @@ const addCartDataToHTML = () => {
 }
 
 addCartDataToHTML();
+
+let viewdetailsBtn = document.querySelectorAll(".viewdetailsBtn");
+let ingradients = document.querySelectorAll(".ingradients");
+
+// console.log(viewdetailsBtn.length);
+viewdetailsBtn.forEach((dishDetails,index) => {
+     dishDetails.addEventListener("click", (e) => {
+        ingradients[index].classList.toggle("open-close");
+           
+        if(e.target.innerText == "View details")
+        {
+            e.target.innerText="Back";
+        }
+        else
+        {
+            e.target.innerText = "View details";
+        }
+       
+     })
+})
 
 
 
