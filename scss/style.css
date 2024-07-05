@@ -443,10 +443,22 @@ ul li a.active {
 .ingradients {
   display: flex;
   position: absolute;
+  top: -100%;
   z-index: 100;
   background: rgba(0, 0, 0, 0.815);
-  height: 100%;
   width: 100%;
+  opacity: 0;
+  height: 100%;
+  transition: 0.3s linear;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -ms-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+}
+
+.ingradients.open-close {
+  opacity: 1;
+  top: 0%;
 }
 
 .ingradients h1 {
@@ -455,23 +467,52 @@ ul li a.active {
   width: 100%;
 }
 
-.ingradients p {
-  top: 15%;
-  gap: 1rem;
-  margin-top: 4rem;
+.ingradients .ingradientsList {
   display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  gap: 1rem;
+  font-size: 1.4rem;
+  height: 65%;
+  overflow-y: scroll;
+  z-index: 100;
+  padding: 0rem 0rem 0rem 3rem;
+}
+
+.ingradients .ingradientsList::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: aqua;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.ingradients .ingradientsList li {
+  list-style: decimal;
 }
 
 .viewdetailsBtn {
   position: absolute;
   bottom: 5%;
   left: 5%;
+  z-index: 100;
+  width: 10rem;
 }
 
 .addToCartBtn {
   position: absolute;
   bottom: 5%;
   right: 5%;
+  z-index: 100;
 }
 
 .review {

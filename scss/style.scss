@@ -505,10 +505,23 @@ ul li a.active
 {
     display: flex;
     position: absolute;
+    top: -100%;
     z-index: 100;
     background: rgba(0, 0, 0, 0.815);
-    height: 100%;
     width: 100%;
+    opacity: 0;
+    height: 100%;
+    transition: .3s linear;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    -ms-transition: .3s linear;
+    -o-transition: .3s linear;
+}
+
+.ingradients.open-close
+{
+    opacity: 1;
+    top: -0%;
 }
 
 .ingradients h1
@@ -518,13 +531,44 @@ ul li a.active
     width: 100%;
 }
 
-.ingradients p
+.ingradients .ingradientsList
 {
-    top: 15%;
-    // position: absolute;
-    gap: 1rem;
-    margin-top: 4rem;
     display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 1rem;
+    // border: 2px solid red;
+    font-size: 1.4rem;
+    height: 65%;
+    overflow-y: scroll;
+    z-index: 100;padding: 0rem 0rem 0rem 3rem;
+}
+
+.ingradients .ingradientsList::-webkit-scrollbar
+{
+    //opacity: 0;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track
+{
+    background: black;
+    // opacity: 0;
+}
+
+::-webkit-scrollbar-thumb
+{  
+    background: aqua;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.ingradients .ingradientsList li
+{
+    list-style:decimal;
 }
 
 .viewdetailsBtn
@@ -532,6 +576,8 @@ ul li a.active
     position: absolute;
     bottom: 5%;
     left: 5%;
+    z-index: 100;
+    width: 10rem;
 }
 
 .addToCartBtn
@@ -539,6 +585,7 @@ ul li a.active
     position: absolute;
     bottom: 5%;
     right: 5%;
+    z-index: 100;
 }
 
 // .dishes-list .dishes-card:hover::before
