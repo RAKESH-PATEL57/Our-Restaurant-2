@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Restaurant</title>
     <link rel="stylesheet" href="./scss/style.css" />
+      <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!--  For icons  -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -71,7 +74,7 @@
     </section>
 
     <section class="review" id="review">
-      <div class="review-content">
+      <div class="review-content mySwiper">
         <img class="bg" src="./images/review-bg.jpg" alt="" />
         <h1 class="heading">Review</h1>
         <div class="review-filter">
@@ -81,7 +84,7 @@
             <option value="3">Worst</option>
           </select>
         </div>
-        <div class="user-reviews-container"></div>
+        <div class="user-reviews-container swiper-wrapper"></div>
         <div class="bottom-review-container">
           <button class="review-btn">Write Review</button>
           <div class="particular-user-review">
@@ -98,7 +101,28 @@
       </div>
     </section>
 
-    <script src="./script.js"></script>
+    <!-- Swiper -->
+    <!-- <section>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="./images/dishes/review1.jpg" alt=""></div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+    </section> -->
+
     <script type="module" src="./dynamicData.js"></script>
+     <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./script.js"></script>
   </body>
 </html>
