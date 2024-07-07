@@ -69,9 +69,9 @@ const addCartDataToHTML = () => {
                     <h1>${product.price}$</h1>
                     <div class="ingradients">
                          <h1>Ingradients</h1>
-                         <ul class="ingradientsList">
+                         <ol class="ingradientsList">
                              ${ingradientsList(product.ingradients)}
-                         </ul>
+                         </ol>
                     </div>
                     <button class="btn viewdetailsBtn">Ingradients</button>
                     <button class="btn addToCartBtn">Add to cart</button>
@@ -92,13 +92,13 @@ viewdetailsBtn.forEach((dishDetails,index) => {
      dishDetails.addEventListener("click", (e) => {
         ingradients[index].classList.toggle("open-close");
            
-        if(e.target.innerText == "View details")
+        if(e.target.innerText == "Ingradients")
         {
             e.target.innerText="Back";
         }
         else
         {
-            e.target.innerText = "View details";
+            e.target.innerText = "Ingradients";
         }
        
      })
@@ -247,11 +247,27 @@ const changeQuantity = (product_id, type) => {
 let userReviewsContainer = document.querySelector(".user-reviews-container");
 // console.log(reviews);
 
+// star creating and coloring stars 
+function reviewStarsCreating(starCount,actualStarNumber)
+{    
+    if(starCount<=actualStarNumber)
+    {
+        return (`<i class="fas fa-star rev-col-star"></i>`); // ex- user gives 4 star then it will colour 4 star
+    }
+    else
+    {
+        return (`<i class="fas fa-star"></i>`);  // ex- if the user give for star out of 5 then 5-4 = 1 star is not coloured
+    }
+    //    let result = (starCount<=actualStarNumber) ?`<i class="fas fa-star rev-col-star"></i>` :(`<i class="fas fa-star"></i>`);
+    //    return result;
+    
+}
+
 reviews.forEach((review, i) => {
     let starCount= 1;
     // console.log(reviews[i].image);
     const reviewCard = `
-    <div class="review-card">
+    <div class="review-card swiper-slide">
     <div class="user-details-review">
       <div class="left-user-details">
         <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
@@ -274,26 +290,22 @@ reviews.forEach((review, i) => {
   </div>
     `
     userReviewsContainer.insertAdjacentHTML("beforeend", reviewCard);
-    let reviewStars = document.querySelectorAll('.r-star');
 
 });
 
-// star creating and coloring stars 
-function reviewStarsCreating(starCount,actualStarNumber)
-{    
-    if(starCount<=actualStarNumber)
-    {
-        return (`<i class="fas fa-star rev-col-star"></i>`); // ex- user gives 4 star then it will colour 4 star
-    }
-    else
-    {
-        return (`<i class="fas fa-star"></i>`);  // ex- if the user give for star out of 5 then 5-4 = 1 star is not coloured
-    }
-    //    let result = (starCount<=actualStarNumber) ?`<i class="fas fa-star rev-col-star"></i>` :(`<i class="fas fa-star"></i>`);
-    //    return result;
-    
-}
 
+
+
+//   <!-- Initialize Swiper -->
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4.4,
+    spaceBetween: 5,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
 
 // review section   [[[[[[[[[[[       End      ]]]]]]]]]]]
