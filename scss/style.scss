@@ -719,8 +719,8 @@ select option
 
 .review-card .user-opinion
 {
-    border: 2px solid red;
-    
+    // border: 2px solid red;
+    width: 100%;
 }
 
 .review-card .user-opinion textarea
@@ -729,9 +729,9 @@ select option
     color: var(--font-color);
     border: none;
     cursor: pointer;
-    // display: flex;
-    text-align:start;
-    width: max-content;
+    text-align:justify;
+    width: 100%;
+
 }
 
 .review-content .bottom-review-container
@@ -803,9 +803,9 @@ select option
     // z-index: 100;
 }
 
-// .stars:hover
-// {
-//     color: aqua;
-// }
+.mySwiper
+{
+    overflow: hidden;
+}
 
 // Review section [[[[[[    end   ]]]]]]

@@ -610,7 +610,7 @@ select option {
 }
 
 .review-card .user-opinion {
-  border: 2px solid red;
+  width: 100%;
 }
 
 .review-card .user-opinion textarea {
@@ -618,9 +618,8 @@ select option {
   color: var(--font-color);
   border: none;
   cursor: pointer;
-  text-align: start;
-  width: -moz-max-content;
-  width: max-content;
+  text-align: justify;
+  width: 100%;
 }
 
 .review-content .bottom-review-container {
@@ -680,4 +679,8 @@ select option {
 
 .particular-user-review .stars.toggleActiveStar {
   color: var(--user-rating-star-color);
+}
+
+.mySwiper {
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
