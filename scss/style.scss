@@ -712,6 +712,16 @@ select option
     -o-border-radius: 50%;
 }
 
+.user-details-review .rating_dates
+{
+    text-align: center;
+}
+
+.user-details-review .rating 
+{
+    margin-bottom: .5rem;
+}
+
 .user-details-review .rating .rev-col-star
 {
     color: var(--user-rating-star-color);
@@ -789,12 +799,12 @@ select option
 
 .particular-user-review .stars
 {
-    transition: .3s linear;
+    transition: .1s linear;
     //z-index: 100;
-    -webkit-transition: .3s linear;
-    -moz-transition: .3s linear;
-    -ms-transition: .3s linear;
-    -o-transition: .3s linear;
+    -webkit-transition: .1s linear;
+    -moz-transition: .1s linear;
+    -ms-transition: .1s linear;
+    -o-transition: .1s linear;
 }
 
 .particular-user-review .stars.toggleActiveStar
