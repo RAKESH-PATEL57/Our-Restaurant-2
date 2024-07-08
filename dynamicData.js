@@ -273,12 +273,15 @@ reviews.forEach((review, i) => {
         <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
         <p class="userName">${reviews[i].name}</p>
       </div>
-      <div class="rating">
-         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      <div class="rating_dates">
+        <div class="rating">
+        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+        </div>
+        <p class="dates">${reviews[i].date}</p>
       </div>
     </div>
     <div class="user-opinion">
