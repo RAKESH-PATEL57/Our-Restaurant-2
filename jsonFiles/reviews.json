@@ -5,7 +5,13 @@
         "name": "Rakesh patel",
         "stars":5,
         "feedback":"The photos of the dishes are stunning and beautifully presented, making each item look incredibly appetizing. It's clear that a lot of care goes into both the preparation and presentation of the food.",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":21,
+                "month":12,
+                "year":2024
+            }
+        ]
     },
     {
         "id":2,
@@ -13,7 +19,13 @@
         "name": "rohit patel",
         "stars":4,
         "feedback":"The variety of dishes available is impressive, catering to a wide range of tastes and dietary preferences. Whether you're a meat lover, vegetarian, or have specific dietary needs, there's something delicious for everyone.",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":11,
+                "month":11,
+                "year":2024
+            }
+        ]
     },
     {
         "id":3,
@@ -21,7 +33,13 @@
         "name": "priya patel",
         "stars":5,
         "feedback":"The menu features a unique blend of traditional and innovative dishes. The fusion of different culinary styles and ingredients shows the creativity and expertise of the chefs",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":10,
+                "month":10,
+                "year":2021
+            }
+        ]
     },
     {
         "id":4,
@@ -29,7 +47,13 @@
         "name": "Raju patel",
         "stars":4,
         "feedback":"Each dish on the website is accompanied by a detailed list of ingredients, which is very helpful for those with dietary restrictions or allergies. This transparency is much appreciated and builds trust with the customers.",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":2,
+                "month":9,
+                "year":2022
+            }
+        ]
     },
     {
         "id":5,
@@ -37,7 +61,13 @@
         "name": "sneha patel",
         "stars":3,
         "feedback":"The emphasis on using seasonal and fresh ingredients is evident from the descriptions and images of the dishes. It's great to know that the restaurant prioritizes quality and sustainability in their food offerings",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":2,
+                "month":8,
+                "year":2024
+            }
+        ]
     },
     {
         "id":5,
@@ -45,7 +75,13 @@
         "name": "sneha patel",
         "stars":3,
         "feedback":"The emphasis on using seasonal and fresh ingredients is evident from the descriptions and images of the dishes. It's great to know that the restaurant prioritizes quality and sustainability in their food offerings",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":18,
+                "month":7,
+                "year":2024
+            }
+        ]
     },
     {
         "id":5,
@@ -53,6 +89,12 @@
         "name": "sneha patel",
         "stars":3,
         "feedback":"The emphasis on using seasonal and fresh ingredients is evident from the descriptions and images of the dishes. It's great to know that the restaurant prioritizes quality and sustainability in their food offerings",
-        "date":"21-06-2024"
+        "date":[
+            {
+                "day":11,
+                "month":6,
+                "year":2023
+            }
+        ]
     }
 ]
