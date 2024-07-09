@@ -113,6 +113,13 @@ function imageLink(product)
     return link;
 }
 
+// reviews.map((reviews) => {
+//     if(reviews.stars>3)
+//     {
+//         console.log(reviews);
+//     }
+// })
+
 
 
 // cart section [[  start  ]]
@@ -265,7 +272,6 @@ function reviewStarsCreating(starCount,actualStarNumber)
 
 reviews.forEach((review, i) => {
     let starCount= 1;
-    // console.log(reviews[i].image);
     const reviewCard = `
     <div class="review-card swiper-slide">
     <div class="user-details-review">
@@ -281,7 +287,7 @@ reviews.forEach((review, i) => {
         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
         ${reviewStarsCreating(starCount++ , reviews[i].stars)}
         </div>
-        <p class="dates">${reviews[i].date}</p>
+        <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
       </div>
     </div>
     <div class="user-opinion">
