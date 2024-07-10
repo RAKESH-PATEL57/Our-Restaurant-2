@@ -113,13 +113,23 @@ function imageLink(product)
     return link;
 }
 
-// reviews.map((reviews) => {
-//     if(reviews.stars>3)
-//     {
-//         console.log(reviews);
-//     }
-// })
+var stt = 5;
+var cn=0;
+reviews.map((starsR, index) => {
 
+    reviews.filter((filteredStar, index) =>{
+        // if(stt>0)
+        // { 
+        //     if(filteredStar.stars === stt)
+        //     {
+        //         console.log(filteredStar.star , index);
+        //     }
+        // }
+        stt--;
+    });
+    console.log((starsR.stars) , index);
+
+});
 
 
 // cart section [[  start  ]]
