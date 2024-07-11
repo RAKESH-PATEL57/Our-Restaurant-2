@@ -115,21 +115,12 @@ function imageLink(product)
 
 var stt = 5;
 var cn=0;
-reviews.map((starsR, index) => {
-
-    reviews.filter((filteredStar, index) =>{
-        // if(stt>0)
-        // { 
-        //     if(filteredStar.stars === stt)
-        //     {
-        //         console.log(filteredStar.star , index);
-        //     }
-        // }
-        stt--;
-    });
-    console.log((starsR.stars) , index);
-
-});
+reviews.sort((a,b) => {
+    console.log(a.stars, b.stars);
+    console.log( a.stars + b.stars);
+    a.stars + b.stars;
+});  
+console.log(reviews);
 
 
 // cart section [[  start  ]]
