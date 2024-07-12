@@ -263,7 +263,7 @@ function reviewStarsCreating(starCount,actualStarNumber)
 
 function showReviews()
 {
-
+    userReviewsContainer.innerHTML = "";
     reviews.forEach((review, i) => {
         let starCount= 1;
     const reviewCard = `
@@ -297,8 +297,6 @@ function showReviews()
 });
 }
 
-showReviews();
-
 //   <!-- Initialize Swiper -->
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4.4,
@@ -310,22 +308,34 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
-  let filterReview = document.querySelector("#filter-review");
+let filterReview = document.querySelector("#filter-review");
+filterReview.addEventListener("change", () => {
 
-  var text = filterReview.options[filterReview.selectedIndex].text;
+    var text = filterReview.options[filterReview.selectedIndex].text;
 
-  if(text == "Recent")
-  {
-    showReviews();
-  }
-
-  else if(text == "Positive")
-  {
-      reviews.sort((a,b) => a.stars - b.stars)
+    console.log(text);
+    
+    if(text == "Recent")
+    {
       showReviews();
-  }
+    }
 
+    else if(text == "Positive")
+    {
+        reviews.sort((a,b) => b.stars - a.stars);
+        console.log(reviews);
+        showReviews();
+    }
 
+    else if(text == "Negative")
+    {
+        reviews.sort((a,b) => a.stars - b.stars);
+        console.log(reviews);
+        showReviews();
+    }
+    
+});
+    
   // reviews.sort((a,b) => {
 //     console.log(a.stars, b.stars);
 //     console.log( a.stars + b.stars);
