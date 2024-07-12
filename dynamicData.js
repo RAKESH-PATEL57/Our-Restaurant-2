@@ -113,16 +113,6 @@ function imageLink(product)
     return link;
 }
 
-var stt = 5;
-var cn=0;
-reviews.sort((a,b) => {
-    console.log(a.stars, b.stars);
-    console.log( a.stars + b.stars);
-    a.stars + b.stars;
-});  
-console.log(reviews);
-
-
 // cart section [[  start  ]]
 
 let cartContent = document.querySelector(".cart-content");
@@ -271,24 +261,27 @@ function reviewStarsCreating(starCount,actualStarNumber)
     
 }
 
-reviews.forEach((review, i) => {
-    let starCount= 1;
+function showReviews()
+{
+
+    reviews.forEach((review, i) => {
+        let starCount= 1;
     const reviewCard = `
     <div class="review-card swiper-slide">
     <div class="user-details-review">
-      <div class="left-user-details">
-        <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
-        <p class="userName">${reviews[i].name}</p>
-      </div>
+    <div class="left-user-details">
+    <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
+    <p class="userName">${reviews[i].name}</p>
+    </div>
       <div class="rating_dates">
-        <div class="rating">
-        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-        ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-        </div>
-        <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
+      <div class="rating">
+      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      </div>
+      <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
       </div>
     </div>
     <div class="user-opinion">
@@ -302,9 +295,9 @@ reviews.forEach((review, i) => {
     userReviewsContainer.insertAdjacentHTML("beforeend", reviewCard);
 
 });
+}
 
-
-
+showReviews();
 
 //   <!-- Initialize Swiper -->
 var swiper = new Swiper(".mySwiper", {
@@ -316,6 +309,29 @@ var swiper = new Swiper(".mySwiper", {
       clickable: true,
     },
   });
+
+  let filterReview = document.querySelector("#filter-review");
+
+  var text = filterReview.options[filterReview.selectedIndex].text;
+
+  if(text == "Recent")
+  {
+    showReviews();
+  }
+
+  else if(text == "Positive")
+  {
+      reviews.sort((a,b) => a.stars - b.stars)
+      showReviews();
+  }
+
+
+  // reviews.sort((a,b) => {
+//     console.log(a.stars, b.stars);
+//     console.log( a.stars + b.stars);
+//     a.stars + b.stars;
+// });  
+// console.log(reviews);
 
 
 // review section   [[[[[[[[[[[       End      ]]]]]]]]]]]
