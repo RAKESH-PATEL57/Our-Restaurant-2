@@ -267,7 +267,7 @@ function showReviews()
     reviews.forEach((review, i) => {
         let starCount= 1;
     const reviewCard = `
-    <div class="review-card swiper-slide">
+    <div class="review-card swiper-slide" role="group" aria-label="NaN / 7" style="width: 268.182px; margin-right: 5px;">
     <div class="user-details-review">
     <div class="left-user-details">
     <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
@@ -308,6 +308,9 @@ var swiper = new Swiper(".mySwiper", {
     },
   });
 
+  showReviews();
+  let recentReviews = reviews;
+
 let filterReview = document.querySelector("#filter-review");
 filterReview.addEventListener("change", () => {
 
@@ -317,6 +320,7 @@ filterReview.addEventListener("change", () => {
     
     if(text == "Recent")
     {
+      reviews = recentReviews;  
       showReviews();
     }
 
