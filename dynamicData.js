@@ -2,7 +2,7 @@
 "use strict"
 import introDishes from "./jsonFiles/introFood.json" with {type: 'json'};
 import allDishes from "./jsonFiles/allDishes.json" with {type: 'json'};
-import reviews from "./jsonFiles/reviews.json" with {type: 'json'};
+import recentReviews from "./jsonFiles/reviews.json" with {type: 'json'};
 
 // console.log(introDishes);
 let introDishesContainer = document.querySelector('.intro-dishes-container');
@@ -261,32 +261,32 @@ function reviewStarsCreating(starCount,actualStarNumber)
     
 }
 
-function showReviews()
+function showReviews(reviewsAll)
 {
     userReviewsContainer.innerHTML = "";
-    reviews.forEach((review, i) => {
-        let starCount= 1;
+    reviewsAll.forEach((review, i) => {
+    let starCount= 1;
     const reviewCard = `
     <div class="review-card swiper-slide" role="group" aria-label="NaN / 7" style="width: 268.182px; margin-right: 5px;">
     <div class="user-details-review">
     <div class="left-user-details">
-    <img class="review-img" loading="lazy" src="${imageLink(reviews[i])}" alt="review-img" />
-    <p class="userName">${reviews[i].name}</p>
+    <img class="review-img" loading="lazy" src="${imageLink(reviewsAll[i])}" alt="review-img" />
+    <p class="userName">${reviewsAll[i].name}</p>
     </div>
       <div class="rating_dates">
       <div class="rating">
-      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviews[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
       </div>
       <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
       </div>
     </div>
     <div class="user-opinion">
       <textarea name="" id="" cols="30" rows="10" disabled>
-      ${reviews[i].feedback}
+      ${reviewsAll[i].feedback}
       </textarea
       >
     </div>
@@ -301,15 +301,15 @@ function showReviews()
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4.4,
     spaceBetween: 5,
-    loop: true,
+    // loop: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
   });
 
-  showReviews();
-  let recentReviews = reviews;
+showReviews(recentReviews);
+// 
 
 let filterReview = document.querySelector("#filter-review");
 filterReview.addEventListener("change", () => {
@@ -320,22 +320,26 @@ filterReview.addEventListener("change", () => {
     
     if(text == "Recent")
     {
-      reviews = recentReviews;  
-      showReviews();
+        showReviews(recentReviews);
     }
 
     else if(text == "Positive")
     {
-        reviews.sort((a,b) => b.stars - a.stars);
-        console.log(reviews);
-        showReviews();
+        const posReviewArr = recentReviews.map((a) => {
+            return a;
+        });
+        posReviewArr.sort((a,b) => b.stars - a.stars);
+        showReviews(posReviewArr);
     }
 
     else if(text == "Negative")
     {
-        reviews.sort((a,b) => a.stars - b.stars);
-        console.log(reviews);
-        showReviews();
+     
+        const negReviewArr = recentReviews.map((a) => {
+            return a;
+        });
+        negReviewArr.sort((a,b) => a.stars - b.stars);
+        showReviews(negReviewArr);
     }
     
 });
