@@ -31,7 +31,7 @@
         "id":3,
         "image":"../images/dishes/review3.jpg",
         "name": "priya patel",
-        "stars":5,
+        "stars":2,
         "feedback":"The menu features a unique blend of traditional and innovative dishes. The fusion of different culinary styles and ingredients shows the creativity and expertise of the chefs",
         "date":[
             {
@@ -70,7 +70,7 @@
         ]
     },
     {
-        "id":5,
+        "id":6,
         "image":"../images/dishes/review5.jpg",
         "name": "sneha patel",
         "stars":3,
@@ -84,7 +84,7 @@
         ]
     },
     {
-        "id":5,
+        "id":7,
         "image":"../images/dishes/review5.jpg",
         "name": "sneha patel",
         "stars":3,
