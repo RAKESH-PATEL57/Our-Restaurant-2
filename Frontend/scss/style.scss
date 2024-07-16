@@ -35,6 +35,136 @@ html
     // scroll-padding-top: 5.5rem;
 }
 
+// LogIn section [[[[[[[[[[[ start ]]]]]]]]]]
+
+.form-container
+{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    @include flexbox(flex,center,center,unset);
+    overflow: hidden;
+}
+
+
+.form-container img
+{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    filter:  blur(10px);
+    -webkit-filter: brightness(15%) blur(10px);
+    z-index: -1;
+}
+
+
+form
+{
+    height: 30rem;
+    width: 30rem;
+    color: var(--font-color);
+}
+
+.heading
+{
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 300;
+}
+
+form input, .submit-btn
+{
+    width: 80%;
+    height: 3rem;
+    display: block;
+    margin: 1.5rem auto;
+    padding: .5rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    text-transform: capitalize;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+form input::placeholder
+{
+    color: var(--font-color);
+}
+
+form input:focus,
+.submit-btn:hover
+{
+    background: var(--font-color);
+    color: var(--sfont-color);
+}
+
+form input:focus::placeholder
+{
+    color: var(--sfont-color);
+}
+
+.submit-btn
+{
+    width: auto;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    margin: 3.5rem auto 0;
+}
+
+.link
+{
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 4rem auto;
+    display: block;
+}
+
+.link:hover
+{
+    color: var(--font-color);
+}
+
+.alert-box
+{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    min-width: 10rem;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 1.2rem;
+    text-transform: capitalize;
+    background: rgb(255, 119,119);
+    border-top: 10px solid rgb(255, 37,37);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--font-color);
+    text-align: center;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    
+}
+
+// registion section [[[[[[[[[[[  end  ]]]]]]]]]] 
+
 // section
 // {
 //     background: #00092fd6;
@@ -48,7 +178,7 @@ html
     width: 100%;
     @include flexbox(flex,center,center,unset);
     position: fixed;
-    z-index: 1000;
+    z-index: 997;
     // border: 2px solid red;
     backdrop-filter: blur(5px);
 }
