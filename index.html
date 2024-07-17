@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Restaurant</title>
-    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./Frontend/scss/style.css" />
       <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -29,8 +29,9 @@
             <li><a href="#review">Review</a></li>
             <li><a href="#order">Order</a></li>
             <a id="cartIcon" href="#" class="bx bx-cart"
-              ><span class="cartQuantityInd">0</span></a
+            ><span class="cartQuantityInd">0</span></a
             >
+            <button id="logoutBtn">Logout</button>
           </ul>
         </nav>
       </div>
@@ -49,7 +50,7 @@
     <section id="home" class="home">
       <img
         class="bg"
-        src="./images/bg-2.png"
+        src="./Frontend/images/bg-2.png"
         loading="lazy"
         id="bg"
         alt="background-image"
@@ -63,7 +64,7 @@
     <section id="dishes" class="dishes">
       <img
         class="bg"
-        src="./images/bg-3.jpg"
+        src="./Frontend/images/bg-3.jpg"
         loading="lazy"
         alt="background-image"
       />
@@ -75,7 +76,7 @@
 
     <section class="review" id="review">
       <div class="review-content mySwiper">
-        <img class="bg" src="./images/review-bg.jpg" alt="" />
+        <img class="bg" src="./Frontend/images/review-bg.jpg" alt="" />
         <h1 class="heading">Review</h1>
         <div class="review-filter">
           <select name="" id="filter-review">
@@ -100,9 +101,8 @@
         </div>
       </div>
     </section>
-    <form action="" class="registration-form">
+    <!-- <form action="" class="registration-form">
       <img src="./images/bg-2.png" alt="">
-      <!-- <img src="./images/registration.svg" alt=""> -->
       <div class="logIn-sigIn-container">
          <div class="log-in">
            <h1>Login</h1>
@@ -111,11 +111,11 @@
 
           </div>
       </div>
-    </form>
+    </form> -->
 
-    <script type="module" src="./dynamicData.js"></script>
+    <script type="module" src="./Frontend/dynamicData.js"></script>
      <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="./Frontend/script.js"></script>
   </body>
 </html>

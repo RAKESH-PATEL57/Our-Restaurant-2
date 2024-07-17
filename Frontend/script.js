@@ -45,4 +45,5 @@ allSections.forEach((sec,index) => {
         allSections[initial].classList.remove("active");
         initial = index;
     })
-})
+});
+

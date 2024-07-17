@@ -26,7 +26,6 @@ const addCartDataToHTML = () => {
     
     introDishesContainer.innerHTML = "";
     allDishesContainer.innerHTML = "";
-    
     if(introDishes.length > 0)
     {
         introDishes.forEach((product) =>{
@@ -47,7 +46,7 @@ const addCartDataToHTML = () => {
     <i class="fas fa-star-half-alt"></i>
     </div>
     </div>
-    <img src="${imageLink(product)}" alt="chicken">
+    <img src="./Frontend/${imageLink(product)}" alt="chicken">
     <button class="btn">Buy Now</button>
     
     `
@@ -64,7 +63,7 @@ const addCartDataToHTML = () => {
             allNewProduct.dataset.id = product.id;
 
             allNewProduct.innerHTML = `
-            <img src="${imageLink(product)}" alt="">
+            <img src="./Frontend/${imageLink(product)}" alt="">
                     <h1>${product.dishName}</h1>
                     <h1>${product.price}$</h1>
                     <div class="ingradients">
@@ -179,10 +178,12 @@ function displayDataInCart()
             let newCart = document.createElement('div');
             newCart.classList.add('cart-foods');
             newCart.dataset.id = cart.product_id;
+
             // console.log(info);
+
             newCart.innerHTML = `
             <div class="cart-food-details">
-            <img class="cart-food-image" src="${imageLink(info)}" alt="">
+            <img class="cart-food-image" src="./Frontend/${imageLink(info)}" alt="">
             <h2 class="cart-food-name">${info.dishName}</h2>
                 <p class="cart-food-price">${info.price * cart.quantity}₹</p>
             </div>
@@ -270,7 +271,7 @@ function showReviews(reviewsAll)
     <div class="review-card swiper-slide" role="group" aria-label="NaN / 7" style="width: 268.182px; margin-right: 5px;">
     <div class="user-details-review">
     <div class="left-user-details">
-    <img class="review-img" loading="lazy" src="${imageLink(reviewsAll[i])}" alt="review-img" />
+    <img class="review-img" loading="lazy" src="./Frontend/${imageLink(reviewsAll[i])}" alt="review-img" />
     <p class="userName">${reviewsAll[i].name}</p>
     </div>
       <div class="rating_dates">
