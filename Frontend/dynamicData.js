@@ -120,11 +120,11 @@ let totalPrice = document.querySelector(".total-price");
 let cartQuantityInd = document.querySelector(".cartQuantityInd");
 let carts = [];
 
-   let allDishesBtn = document.querySelectorAll(".allDishesBtn");
+   let addToCartBtn = document.querySelectorAll(".addToCartBtn");
 //    console.log(btn.length);
 
-    allDishesBtn.forEach((value,index) => {
-        allDishesBtn[index].addEventListener("click", (e) => {
+    addToCartBtn.forEach((value,index) => {
+        addToCartBtn[index].addEventListener("click", (e) => {
         let product_id = e.target.parentElement.dataset.id;
         addToCart(product_id);
     });
@@ -179,10 +179,10 @@ function displayDataInCart()
             let newCart = document.createElement('div');
             newCart.classList.add('cart-foods');
             newCart.dataset.id = cart.product_id;
-            // console.log(totalCartPrice);
+            // console.log(info);
             newCart.innerHTML = `
             <div class="cart-food-details">
-            <img class="cart-food-image" src="${info.image}" alt="">
+            <img class="cart-food-image" src="${imageLink(info)}" alt="">
             <h2 class="cart-food-name">${info.dishName}</h2>
                 <p class="cart-food-price">${info.price * cart.quantity}₹</p>
             </div>
