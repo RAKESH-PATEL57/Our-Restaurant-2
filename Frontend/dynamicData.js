@@ -247,11 +247,17 @@ let userReviewsContainer = document.querySelector(".user-reviews-container");
 // console.log(reviews);
 
 // star creating and coloring stars 
+let str ="";
 function reviewStarsCreating(starCount,actualStarNumber)
 {    
+    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
     if(starCount<=actualStarNumber)
     {
-        return (`<i class="fas fa-star rev-col-star"></i>`); // ex- user gives 4 star then it will colour 4 star
+        str += `<i class="fas fa-star rev-col-star"></i>`;
+        return (str); // ex- user gives 4 star then it will colour 4 star
     }
     else
     {
@@ -259,6 +265,8 @@ function reviewStarsCreating(starCount,actualStarNumber)
     }
     //    let result = (starCount<=actualStarNumber) ?`<i class="fas fa-star rev-col-star"></i>` :(`<i class="fas fa-star"></i>`);
     //    return result;
+
+    return str;
     
 }
 
@@ -276,10 +284,6 @@ function showReviews(reviewsAll)
     </div>
       <div class="rating_dates">
       <div class="rating">
-      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
       ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
       </div>
       <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
