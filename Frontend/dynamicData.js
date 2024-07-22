@@ -247,34 +247,30 @@ let userReviewsContainer = document.querySelector(".user-reviews-container");
 // console.log(reviews);
 
 // star creating and coloring stars 
-let str ="";
-function reviewStarsCreating(starCount,actualStarNumber)
-{    
-    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-    // ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
-    if(starCount<=actualStarNumber)
-    {
-        str += `<i class="fas fa-star rev-col-star"></i>`;
-        return (str); // ex- user gives 4 star then it will colour 4 star
-    }
-    else
-    {
-        return (`<i class="fas fa-star"></i>`);  // ex- if the user give for star out of 5 then 5-4 = 1 star is not coloured
-    }
-    //    let result = (starCount<=actualStarNumber) ?`<i class="fas fa-star rev-col-star"></i>` :(`<i class="fas fa-star"></i>`);
-    //    return result;
 
-    return str;
-    
+function reviewStarsCreating(actualStarNumber)
+{    
+    let str ="";
+
+    for(let starCount=1;starCount<=5;starCount++)
+    {
+        if(starCount<=actualStarNumber)
+        {
+            str += `<i class="fas fa-star rev-col-star"></i>`;
+        }
+        else
+        {
+            str += `<i class="fas fa-star"></i>`
+        }
+    }
+
+    return str; 
 }
 
 function showReviews(reviewsAll)
 {
     userReviewsContainer.innerHTML = "";
     reviewsAll.forEach((review, i) => {
-    let starCount= 1;
     const reviewCard = `
     <div class="review-card swiper-slide" role="group" aria-label="NaN / 7" style="width: 268.182px; margin-right: 5px;">
     <div class="user-details-review">
@@ -284,7 +280,7 @@ function showReviews(reviewsAll)
     </div>
       <div class="rating_dates">
       <div class="rating">
-      ${reviewStarsCreating(starCount++ , reviewsAll[i].stars)}
+      ${reviewStarsCreating(reviewsAll[i].stars)}
       </div>
       <p class="dates">${review.date[0].day}-${review.date[0].month}-${review.date[0].year}</p>
       </div>
