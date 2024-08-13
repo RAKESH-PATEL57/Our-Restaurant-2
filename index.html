@@ -31,7 +31,7 @@
             <a id="cartIcon" href="#" class="bx bx-cart"
             ><span class="cartQuantityInd">0</span></a
             >
-            <button id="logoutBtn">Logout</button>
+            <button id="formOpenBtn">LogIn</button>
           </ul>
         </nav>
       </div>
@@ -46,6 +46,57 @@
         <button class="Buy-Btn">Buy Now</button>
       </div>
     </div>
+
+    <div class="form-popup">
+      <i class='bx bx-x' id="close_Btn"></i>
+      <div class="form-content" id="LOG-IN">
+          <h2>LOGIN</h2>
+          <form class="form-elements" action="#">
+              <div class="log-in">
+                  <div class="input-field">
+                      <label>Email</label>
+                      <input type="text" placeholder="Enter email id" required>
+                  </div>
+                  <div class="input-field">
+                      <label>Password</label>
+                      <input type="password" placeholder="Enter password" required>
+                  </div>
+                  <a href="#" class="forgot-password">Forgot Password?</a>
+              </div>
+              <button class="log-btn" id="Log-in-Btn" type="submit">Log In</button>
+          </form>
+          <div class="bottom-link">
+              Don't have an account?
+              <a class="sign-Up" id="signup"  href="#">Sign Up</a>
+          </div>
+      </div>
+      <div class="form-content" id="SIGN-UP">
+          <h2>SIGN UP</h2>
+          <form class="form-elements" action="#">
+              <div class="sign-in">
+                  <div class="input-field">
+                      <label>Name</label>
+                      <input type="text" placeholder="Enter Your e-mail" required>
+                  </div>
+                  <div class="input-field">
+                      <label>Email</label>
+                      <input type="text" placeholder="Create your password" required>
+                  </div>
+                  <div class="input-field">
+                      <label>Password</label>
+                      <input type="password" placeholder="Confirm Password" required>
+                  </div>
+                  <!-- <a href="#" class="forgot-password">Forgot Password?</a> -->
+              </div>
+              <button class="sign-in-btn" id="Sign-In-Btn" type="submit">Sign In</button>
+          </form>
+          <div class="bottom-link">
+              Already have an account?
+              <a class="sign-Up" id="login" href="#">Log-In</a>
+          </div>
+      </div>
+    </div>
+  
 
     <section id="home" class="home">
       <img
