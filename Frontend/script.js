@@ -47,3 +47,41 @@ allSections.forEach((sec,index) => {
     })
 });
 
+//****** */ log-in and sign-in section *********************
+const formOpenBtn = document.querySelector("#formOpenBtn");
+const formPopUp = document.querySelector(".form-popup");
+const formCloseButton = document.querySelector("#close_Btn");
+const logInBtn = document.querySelector("#login");
+const signInBtn = document.querySelector("#signup");
+
+const homeheader = document.querySelector('.header');
+const homepage = document.querySelector('.home');
+// const bodyScroll = document.querySelector('.body');
+
+formOpenBtn.onclick = () => {
+    formPopUp.classList.add("show");
+    homeheader.classList.add('headerblur');
+    homepage.classList.add('homeblur');
+    // bodyScroll.classList.add('bodyScroll');
+  
+};
+formCloseButton.onclick = () => {
+    formPopUp.classList.remove("show");
+    homeheader.classList.remove('headerblur');
+    homepage.classList.remove('homeblur');
+    // bodyScroll.classList.remove('bodyScroll');
+}
+
+signInBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formPopUp.classList.add("active");
+
+});
+
+
+logInBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formPopUp.classList.remove("active");
+});
+
+
