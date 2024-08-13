@@ -192,7 +192,7 @@ ul li a.active {
   color: aqua;
 }
 
-#logoutBtn {
+#formOpenBtn {
   color: var(--font-color);
   padding: 0.5rem 1rem;
   background: transparent;
@@ -210,7 +210,7 @@ ul li a.active {
   -o-transition: 0.2s linear;
 }
 
-#logoutBtn:hover {
+#formOpenBtn:hover {
   background: aqua;
   color: var(--sfont-color);
   -webkit-backdrop-filter: blur(10px);
@@ -219,6 +219,260 @@ ul li a.active {
   -webkit-filter: drop-shadow(0rem 0rem 1rem aqua);
 }
 
+/**************   Log In and Sign in section  Start   ****************/
+.login-btn {
+  width: 9rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  font-size: 1.7rem;
+  background: var(--main-color);
+  border: 2px solid var(--main-color);
+  color: var(--font-color);
+}
+
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 400px;
+  width: 100%;
+  border: 2px solid var(--main-color);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 1rem;
+  color: var(--font-color);
+  overflow: hidden;
+  display: flex;
+  justify-content: unset;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 2rem;
+  opacity: 0;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.form-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1000;
+}
+
+.form-popup.active #SIGN-UP {
+  display: block;
+}
+
+.form-popup.active #LOG-IN {
+  display: none;
+}
+
+.form-popup #close_Btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.form-popup #close_Btn:hover {
+  color: var(--main-color);
+  font-size: 4rem;
+}
+
+/* .form-popup img
+{
+    position: absolute;
+    z-index: -2;
+    height: 30rem;
+    filter: blur(2px);
+} */
+.form-popup h2 {
+  color: var(--font-color);
+  -webkit-text-stroke: rgb(0, 0, 0) 0.1px;
+  text-shadow: 0px 0px 0.5rem var(--main-color), 0px 0px 0.8rem var(--main-color), 0px 0px 1rem var(--main-color), 0px 0px 1.5rem var(--main-color);
+  font-size: 2rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: 0.3rem solid var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: unset;
+}
+
+.form-popup .form-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 10rem;
+}
+
+.form-popup .form-content .form-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* log-in section start */
+.log-in {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: unset;
+  align-items: unset;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.log-in .input-field {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: unset;
+}
+
+.input-field label {
+  font-size: 1.8rem;
+  color: var(--font-color);
+}
+
+.input-field input {
+  border: 2px solid black;
+  margin-left: 4.5rem;
+  width: 25rem;
+  font-size: 1.5rem;
+  background: var(--main-color);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  color: var(--font-color);
+  border: 1px solid var(--main-color);
+}
+
+.input-field input:hover {
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+
+.input-field input::-moz-placeholder {
+  color: var(--font-color);
+}
+
+.input-field input::placeholder {
+  color: var(--font-color);
+}
+
+.log-in .forgot-password {
+  color: var(--font-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.forgot-password:hover {
+  color: var(--main-color);
+}
+
+.log-btn {
+  width: 9rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  font-size: 1.7rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--font-color);
+}
+
+.log-btn:hover {
+  color: var(--font-color);
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+
+.bottom-link {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+/* log-in section end */
+/* sign-in section start */
+#SIGN-UP {
+  display: none;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+.bottom-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: unset;
+}
+
+.bottom-link .sign-Up {
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+.sign-Up:hover {
+  color: var(--main-color);
+}
+
+.sign-in {
+  display: flex;
+  justify-content: unset;
+  align-items: unset;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sign-in .input-field {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: unset;
+}
+
+.sign-in .forgot-password {
+  color: var(--main-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.forgot-password:hover {
+  color: var(--main-color);
+}
+
+.sign-in-btn {
+  width: 9rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 0.6rem;
+  font-size: 1.7rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  color: var(--font-color);
+}
+
+.sign-in-btn:hover {
+  color: var(--font-color);
+  box-shadow: 0px 0px 10px var(--main-color);
+}
+
+/* sign-in section end */
+/**************   Log-In and Sign-In section  End   ****************/
 .header-content .icons-container {
   color: var(--font-color);
 }
