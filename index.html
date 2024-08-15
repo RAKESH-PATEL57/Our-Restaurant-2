@@ -31,7 +31,7 @@
             <a id="cartIcon" href="#" class="bx bx-cart"
             ><span class="cartQuantityInd">0</span></a
             >
-            <button id="formOpenBtn">LogIn</button>
+            <button id="log-in-Btn-open">LogIn</button>
           </ul>
         </nav>
       </div>
@@ -47,56 +47,49 @@
       </div>
     </div>
 
-    <div class="form-popup">
-      <i class='bx bx-x' id="close_Btn"></i>
-      <div class="form-content" id="LOG-IN">
-          <h2>LOGIN</h2>
-          <form class="form-elements" action="#">
-              <div class="log-in login-signin-details">
-                  <div class="input-field">
-                      <label>Email</label>
-                      <input type="text" placeholder="Enter email id" required>
-                  </div>
-                  <div class="input-field">
-                      <label>Password</label>
-                      <input type="password" placeholder="Enter password" required>
-                  </div>
-                  <a href="#" class="forgot-password">Forgot Password?</a>
+    <!-- log-in sign-in section [[[[   Start  ]]]] -->
+    
+    <form action="#">
+      <div class="form-container log-In active">
+          <h1 class="form-heading">Log-In</h1>
+          <div class="form-details">
+              <div class="input-container">
+                  <label for="">Enter Your Name</label>
+                  <input type="text" required>
               </div>
-              <button class="log-btn" id="Log-in-Btn" type="submit">Log In</button>
-          </form>
-          <div class="bottom-link">
-              Don't have an account?
-              <a class="sign-Up" id="signup"  href="#">Sign Up</a>
+              <div class="input-container">
+                  <label for="">Enter Your Password</label>
+                  <input type="password" required>
+              </div>
+              <div class="form-submitBtn-container">
+                  <button class="form-submitBtn" id="log-in-Btn" type="submit">Log-In</button>
+              </div>
+              <p class="form-desc">Don't have an account?<span class="user-toggle" id="create-account-btn">Create Account</span></p>
           </div>
       </div>
-      <div class="form-content" id="SIGN-UP">
-          <h2>SIGN UP</h2>
-          <form class="form-elements" action="#">
-              <div class="sign-in login-signin-details">
-                  <div class="input-field">
-                      <label>Name</label>
-                      <input type="text" placeholder="Enter Your e-mail" required>
-                  </div>
-                  <div class="input-field">
-                      <label>Email</label>
-                      <input type="text" placeholder="Create your password" required>
-                  </div>
-                  <div class="input-field">
-                      <label>Password</label>
-                      <input type="password" placeholder="Confirm Password" required>
-                  </div>
-                  <!-- <a href="#" class="forgot-password">Forgot Password?</a> -->
+      <div class="form-container sign-Up">
+          <h1 class="form-heading">Sign-Up</h1>
+          <div class="form-details">
+              <div class="input-container">
+                  <label for="">Enter Your Name</label>
+                  <input type="text" required>
               </div>
-              <button class="sign-in-btn" id="Sign-In-Btn" type="submit">Sign In</button>
-          </form>
-          <div class="bottom-link">
-              Already have an account?
-              <a class="sign-Up" id="login" href="#">Log-In</a>
+              <div class="input-container">
+                  <label for="">Create Password</label>
+                  <input type="password" required>
+              </div>
+              <div class="input-container">
+                  <label for="">Conform Password</label>
+                  <input type="password" required>
+              </div>
+              <div class="form-submitBtn-container">
+                  <button class="form-submitBtn" id="sign-up-Btn" type="submit">Create Account</button>
+              </div>
+              <p class="form-desc">Already have an account?<span class="user-toggle" id="log-in-span">Log In</span></p>
           </div>
       </div>
-    </div>
-  
+  </form>
+    <!-- log-in sign-in section [[[[    End   ]]]] -->
 
     <section id="home" class="home">
       <img
