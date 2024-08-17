@@ -53,15 +53,24 @@ let signInContainer = document.querySelector(".sign-Up");
 
 
 let form = document.querySelector("form");
-let formopenBtn = document.querySelector("#log-in-Btn-open");
+let formOpenBtn = document.querySelector("#log-in-Btn-open");
+let formCloseBtn = document.querySelector("#closeBtn");
 let createAccountBtn = document.querySelector("#create-account-btn");
 let logInSpan = document.querySelector("#log-in-span");
 let logInBtn = document.querySelector("#log-in-Btn");
 let signInBtn = document.querySelector("#sign-up-Btn");
+let bodyScroll = document.querySelector("body");
 
-formopenBtn.addEventListener("click", () => {
+formOpenBtn.addEventListener("click", () => {
     form.classList.add("active");
+    bodyScroll.classList.add("stop-scrooling");
 });
+
+formCloseBtn.addEventListener("click", () => {
+    form.classList.remove("active");
+    bodyScroll.classList.remove("stop-scrooling");
+});
+
 createAccountBtn.addEventListener("click", () => {
     signInContainer.classList.add("active");
     logInContainer.classList.remove("active");
@@ -76,7 +85,6 @@ logInSpan.addEventListener("click", () => {
     logInContainer.classList.add("active");
     signInContainer.classList.remove("active");
 });
-
 
 
 logInBtn.addEventListener("click", (e) => {
