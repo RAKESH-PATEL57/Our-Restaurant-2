@@ -228,24 +228,6 @@ form .form-container {
   margin-top: 1rem;
 }
 
-.form-submitBtn-container .form-submitBtn {
-  padding: 0.3rem 1rem;
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  translate: -50%;
-  cursor: pointer;
-  background: var(--main-color);
-  border-radius: 0.8rem;
-  -webkit-border-radius: 0.8rem;
-  -moz-border-radius: 0.8rem;
-  -ms-border-radius: 0.8rem;
-  -o-border-radius: 0.8rem;
-  color: var(--sfont-color);
-  border: 2px solid var(--sfont-color);
-  font-weight: 400;
-}
-
 .form-submitBtn-container .form-submitBtn:hover {
   border: 2px solid var(--font-color);
   box-shadow: 0rem 0rem 0.5rem var(--main-color);
