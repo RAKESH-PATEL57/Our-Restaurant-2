@@ -901,7 +901,7 @@ select option
     display: flex;
     gap:3rem;
     width: 100%;
-    // border: 2px solid red;
+    height: 35%;
 }
 
 .user-reviews-container .review-card
@@ -921,7 +921,6 @@ select option
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border: 2px solid red;
     width: 100%;
 }
 
@@ -977,12 +976,12 @@ select option
 
 .review-content .bottom-review-container
 {
-    // border: 2px solid red;
     width: 50vw;
     align-self: flex-end;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .bottom-review-container .review-btn
@@ -1002,15 +1001,18 @@ select option
 
 .bottom-review-container .particular-user-review
 {
-    // border: 2px solid aqua;
-    display: flex;
-    // justify-content: space-between;
     gap: 7rem;
     align-items: center;
     width: 70%;
     color: var(--font-color);
     font-size: 2rem;
     cursor: pointer;
+    display: none;
+}
+
+.bottom-review-container .particular-user-review.active
+{
+    display: flex;
 }
 
 .particular-user-review textarea
