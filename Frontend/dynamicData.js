@@ -356,3 +356,5 @@ filterReview.addEventListener("change", () => {
 // review section   [[[[[[[[[[[       End      ]]]]]]]]]]]
 
 
+// Dynamically adding data to our json file  [[[[[[[[[[[       End      ]]]]]]]]]]]
+
