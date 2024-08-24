@@ -95,13 +95,15 @@ logInBtn.addEventListener("click", (e) => {
 
 // Reviews section    [[[[[[[[[[[     Start    ]]]]]]]]]]]
 
-let reviewBtn = document.querySelector(".review-btn");
-let particularUserReviewContainer = document.querySelector(".particular-user-review");
+// let reviewBtn = document.querySelector(".review-btn");
+// let particularUserReviewContainer = document.querySelector(".particular-user-review");
 
-reviewBtn.addEventListener("click" , () => {
-    particularUserReviewContainer.classList.toggle("active");
-})
+// reviewBtn.addEventListener("click" , () => {
+//     particularUserReviewContainer.classList.toggle("active");
+// })
 
 // Reviews section    [[[[[[[[[[[      End     ]]]]]]]]]]]
+
+
 
 
