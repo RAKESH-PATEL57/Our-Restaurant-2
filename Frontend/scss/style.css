@@ -98,7 +98,7 @@ body.stop-scrooling {
   overflow: hidden;
 }
 
-form {
+.log-in-sign-in-form {
   position: fixed;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -129,7 +129,7 @@ form {
   top: -50%;
 }
 
-form.active {
+.log-in-sign-in-form.active {
   display: block;
   opacity: 1;
   scale: 1;
@@ -137,7 +137,7 @@ form.active {
   top: 50%;
 }
 
-form #closeBtn {
+.log-in-sign-in-form #closeBtn {
   border-radius: 50%;
   position: absolute;
   right: 2%;
@@ -156,12 +156,12 @@ form #closeBtn {
   -o-transition: 0.2s linear;
 }
 
-form #closeBtn:hover {
+.log-in-sign-in-form #closeBtn:hover {
   color: var(--main-color);
   background: black;
 }
 
-form .form-container {
+.log-in-sign-in-form .form-container {
   height: 100%;
   display: flex;
   justify-content: unset;
@@ -204,12 +204,12 @@ form .form-container {
   flex-direction: unset;
 }
 
-.input-container label {
+label {
   color: var(--font-color);
   font-size: 1.5rem;
 }
 
-.input-container input {
+input {
   background: transparent;
   padding: 0.3rem;
   width: 20rem;
@@ -217,9 +217,8 @@ form .form-container {
   color: var(--font-color);
 }
 
-.input-container input:focus {
+input:focus {
   outline: none;
-  color: var(--font-color);
 }
 
 .form-details .form-submitBtn-container {
@@ -274,7 +273,7 @@ form .form-container {
 
 .cart-container {
   border: 2px solid rgb(255, 255, 255);
-  position: absolute;
+  position: fixed;
   z-index: 100;
   right: 0;
   top: 11%;
@@ -833,4 +832,86 @@ select option {
 
 .mySwiper {
   overflow: hidden;
+}
+
+.order {
+  position: absolute;
+  top: -50rem;
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  background: transparent;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: unset;
+  pointer-events: none;
+  height: 0;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+
+.order.active {
+  min-height: 100vh;
+  inset: 0;
+  pointer-events: auto;
+}
+
+.order #close-icon-order-section {
+  font-size: 4rem;
+  position: absolute;
+  cursor: pointer;
+  top: 2%;
+  right: 2%;
+  color: var(--main-color);
+}
+
+.order .order-container {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: unset;
+  padding-right: 5rem;
+}
+
+.order-container img {
+  height: 35rem;
+}
+
+.order-container .order-form {
+  z-index: 10000;
+  min-height: 40rem;
+  width: 50rem;
+  padding: 3rem;
+  box-shadow: inset 0rem 0rem 1rem gray;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.order-form .user-deatils {
+  display: flex;
+  justify-content: unset;
+  align-items: unset;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.order-form .order-input {
+  font-size: 2rem;
+  color: var(--font-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-form textarea {
+  height: 12rem;
+  resize: none;
 }/*# sourceMappingURL=style.css.map */
