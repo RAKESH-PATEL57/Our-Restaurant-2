@@ -48,14 +48,14 @@
       <div class="cart-content"></div>
       <div class="cart-order">
         <p>total price :- <span class="total-price"></span></p>
-        <button class="Buy-Btn">Buy Now</button>
+        <button class="Buy-Btn buyNowBtn">Buy Now</button>
       </div>
     </div>
 
     <!--******************    Cart section    [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
 
     <!--******************    Log-in section [[[[[[[[[[[[   Start     ]]]]]]]]]]]]   **************-->
-    <form action="#">
+    <form action="#" class="log-in-sign-in-form">
       <i class='bx bx-x' id="closeBtn"></i>
       <div class="form-container log-In active">
           <h1 class="form-heading">Log-In</h1>
@@ -164,9 +164,30 @@
     <!--******************   Review section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
  
     <!--******************   Order  section [[[[[[[[[[[[   Start    ]]]]]]]]]]]]   **************-->
-    <!-- <section class="order">
-      
-    </section> -->
+    <section class="order">
+      <i class="bx bx-x" id="close-icon-order-section"></i>
+        <div class="order-container">
+          <img class="paymentImg" src="./Frontend/images/payment.gif" alt="paymentImg">
+          <form action="#" class="order-form">
+              <div class="user-deatils">
+                <div class="order-input">
+                  <label for="">Your Name</label>
+                  <input type="text" required>
+              </div>
+              <div class="order-input">
+                <label for="">Your Email</label>
+                <input type="email" required>
+              </div>
+              <div class="order-input">
+                <label for="">Phone Number</label>
+                <input type="number" required>
+              </div>
+              <textarea name="" id="" placeholder="Enter Your Address"></textarea>
+              <button class="btn" type="submit">Order Now</button>
+              </div>
+            </form>
+        </div>
+    </section>
     <!--******************   Order  section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
  
 
