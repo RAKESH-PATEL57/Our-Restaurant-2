@@ -47,7 +47,7 @@ const addCartDataToHTML = () => {
     </div>
     </div>
     <img src="./Frontend/${imageLink(product)}" alt="chicken">
-    <button class="btn">Buy Now</button>
+    <button class="btn buyNowBtn">Buy Now</button>
     
     `
     
@@ -357,4 +357,25 @@ filterReview.addEventListener("change", () => {
 
 
 // Dynamically adding data to our json file  [[[[[[[[[[[       End      ]]]]]]]]]]]
+
+
+
+
+// Order Section  [[[[[[[[[[[      Start     ]]]]]]]]]]]
+let allBuyNowBtnS = document.querySelectorAll(".buyNowBtn");
+let orderSection = document.querySelector(".order");
+
+let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
+
+allBuyNowBtnS.forEach((allBuyBtns) => {
+    allBuyBtns.addEventListener("click", () => {
+        orderSection.classList.add("active");
+    });
+});
+
+closeBtnOrderSection.addEventListener("click", () => {
+    orderSection.classList.remove("active");
+})
+
+// Order Section  [[[[[[[[[[[       End      ]]]]]]]]]]]
 
