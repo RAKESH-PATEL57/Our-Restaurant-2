@@ -52,7 +52,7 @@ let logInContainer = document.querySelector(".log-In");
 let signInContainer = document.querySelector(".sign-Up");
 
 
-let form = document.querySelector("form");
+let logInSignInForm = document.querySelector(".log-in-sign-in-form");
 let formOpenBtn = document.querySelector("#log-in-Btn-open");
 let formCloseBtn = document.querySelector("#closeBtn");
 let createAccountBtn = document.querySelector("#create-account-btn");
@@ -62,12 +62,12 @@ let signInBtn = document.querySelector("#sign-up-Btn");
 let bodyScroll = document.querySelector("body");
 
 formOpenBtn.addEventListener("click", () => {
-    form.classList.add("active");
+    logInSignInForm.classList.add("active");
     bodyScroll.classList.add("stop-scrooling");
 });
 
 formCloseBtn.addEventListener("click", () => {
-    form.classList.remove("active");
+    logInSignInForm.classList.remove("active");
     bodyScroll.classList.remove("stop-scrooling");
 });
 
