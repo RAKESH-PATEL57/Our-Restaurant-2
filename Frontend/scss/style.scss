@@ -1068,13 +1068,15 @@ select option
 {
     position: absolute;
     top: -50rem;
+    height: 0;
+    // height: 100vh;
+    // top: 0rem;
     backdrop-filter: blur(2rem);
     background: transparent;
     z-index: 10000;
     @include flexbox(flex,center,center,unset);
     //opacity: 0;
     pointer-events: none;
-    height: 0;
     transition: .2s ease-in-out;
     -webkit-transition: .2s ease-in-out;
     -moz-transition: .2s ease-in-out;
@@ -1147,6 +1149,14 @@ select option
 {
     height: 12rem;
     resize: none;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    padding:1rem;
+}
+
+.order-form textarea::placeholder
+{
+    color: rgb(212, 212, 212);
 }
 
 // <!--******************   Order  section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
