@@ -837,6 +837,7 @@ select option {
 .order {
   position: absolute;
   top: -50rem;
+  height: 0;
   -webkit-backdrop-filter: blur(2rem);
           backdrop-filter: blur(2rem);
   background: transparent;
@@ -846,7 +847,6 @@ select option {
   align-items: center;
   flex-direction: unset;
   pointer-events: none;
-  height: 0;
   transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
   -moz-transition: 0.2s ease-in-out;
@@ -914,4 +914,15 @@ select option {
 .order-form textarea {
   height: 12rem;
   resize: none;
+  border: 2px solid var(--main-color);
+  background: transparent;
+  padding: 1rem;
+}
+
+.order-form textarea::-moz-placeholder {
+  color: rgb(212, 212, 212);
+}
+
+.order-form textarea::placeholder {
+  color: rgb(212, 212, 212);
 }/*# sourceMappingURL=style.css.map */
