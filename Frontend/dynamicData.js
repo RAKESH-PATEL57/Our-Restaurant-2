@@ -364,11 +364,37 @@ filterReview.addEventListener("change", () => {
 // Order Section  [[[[[[[[[[[      Start     ]]]]]]]]]]]
 let allBuyNowBtnS = document.querySelectorAll(".buyNowBtn");
 let orderSection = document.querySelector(".order");
+let orderContainer = document.querySelector(".order-container");
 
 let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
 
 allBuyNowBtnS.forEach((allBuyBtns) => {
     allBuyBtns.addEventListener("click", () => {
+        orderContainer.innerHTML = " ";
+        const orderSectionContent = `
+          <img class="paymentImg" src="./Frontend/images/payment.gif" alt="paymentImg">
+          <form action="#" class="order-form">
+              <div class="user-deatils">
+                <div class="order-input">
+                  <label for="">Your Name</label>
+                  <input type="text" required>
+              </div>
+              <div class="order-input">
+                <label for="">Your Email</label>
+                <input type="email" required>
+              </div>
+              <div class="order-input">
+                <label for="">Phone Number</label>
+                <input type="number" required>
+              </div>
+              <textarea name="" id="" placeholder="Enter Your Address"></textarea>
+              <button class="btn" type="submit">Order Now</button>
+              </div>
+            </form>
+        `
+
+        orderContainer.insertAdjacentHTML("afterbegin",orderSectionContent);
+
         orderSection.classList.add("active");
     });
 });
