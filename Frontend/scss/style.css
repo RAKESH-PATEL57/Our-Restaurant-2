@@ -499,8 +499,8 @@ input:focus {
 }
 
 .intro-dishes-card img {
-  height: 18rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   position: absolute;
   left: 14rem;
   top: -8rem;
@@ -838,6 +838,7 @@ select option {
   position: absolute;
   top: -50rem;
   height: 0;
+  width: 100%;
   -webkit-backdrop-filter: blur(2rem);
           backdrop-filter: blur(2rem);
   background: transparent;
@@ -876,11 +877,37 @@ select option {
   justify-content: space-between;
   align-items: center;
   flex-direction: unset;
-  padding-right: 5rem;
+  padding: 0rem 5rem;
 }
 
-.order-container img {
-  height: 35rem;
+.order-container .order-left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: inset 0rem 0rem 1rem gray;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
+.order-left-container h1 {
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+.order-left-container .ordered-food-Img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.order-left-container span {
+  font-size: 2rem;
+  color: var(--main-color);
 }
 
 .order-container .order-form {
