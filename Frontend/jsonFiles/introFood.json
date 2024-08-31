@@ -1,21 +1,21 @@
 [
     {
         "id":1,
-        "dishName": "Delicious Noodle",
+        "dishName": "Hamburger",
         "price": "5",
-        "image":"../images/dishes/noodle.png"
+        "image":"../images/dishes/ds-1.png"
     },
     {
         "id":2,
-        "dishName": "Delicious Noodle",
+        "dishName": "grilled steak with sides",
         "price": "5",
-        "image":"../images/dishes/noodle.png"
+        "image":"../images/dishes/ds-2.png"
         
     },
     {
         "id":3,
-        "dishName": "Delicious Noodle",
+        "dishName": "Pizaa",
         "price": "5",
-        "image":"../images/dishes/noodle.png"
+        "image":"../images/dishes/pizaa.png"
     }
 ]
