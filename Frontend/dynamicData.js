@@ -366,13 +366,28 @@ let allBuyNowBtnS = document.querySelectorAll(".buyNowBtn");
 let orderSection = document.querySelector(".order");
 let orderContainer = document.querySelector(".order-container");
 
+
+let orderedFoodName = document.querySelector(".ordered-foodName");
+let OrderedFoodImg = document.querySelector(".ordered-food-Img");
+let orderedFoodPrice = document.querySelector(".ordered-foodPrice");
+
 let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
 
 allBuyNowBtnS.forEach((allBuyBtns) => {
-    allBuyBtns.addEventListener("click", () => {
+    allBuyBtns.addEventListener("click", (e) => {
+        // console.log(e.target.parentElement);
+        let parentdata = e.target.parentElement;
+        // const imageLink = (parentdata.children[1].src).toString().slice(1);
+        const imageLink = parentdata.children[1].src;
+        const orderedFdName = parentdata.children[0].children[0].children[0].innerText;
+        const orderedFdPrice = parentdata.children[0].children[0].children[1].innerText;
         orderContainer.innerHTML = " ";
         const orderSectionContent = `
-          <img class="paymentImg" src="./Frontend/images/payment.gif" alt="paymentImg">
+          <div class="order-left-container">
+            <h1>Food Name:- <span class="ordered-foodName">${orderedFdName}</span></h1>
+            <img class="ordered-food-Img" src="${imageLink}" alt="ordered-food-Img">
+            <h1>Food Price:- <span class="ordered-foodPrice">${orderedFdPrice}</span></h1>
+          </div>
           <form action="#" class="order-form">
               <div class="user-deatils">
                 <div class="order-input">
