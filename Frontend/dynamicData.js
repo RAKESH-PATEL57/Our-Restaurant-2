@@ -47,7 +47,7 @@ const addCartDataToHTML = () => {
     </div>
     </div>
     <img src="./Frontend/${imageLink(product)}" alt="chicken">
-    <button class="btn buyNowBtn">Buy Now</button>
+    <button class="btn targetBtns buyNowBtn">Buy Now</button>
     
     `
     
@@ -381,14 +381,42 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
         let OrderedFoodImgLink = null;
         let orderedFoodPrice = null;
 
+        let orderSectionContent = "";
+
         orderContainer.innerHTML = " ";
         
         if(index === 0)
         {
-            // orderContainer.insertAdjacentHTML("afterbegin",cartContent.innerHTML);
-            orderedFoodName="";
-            OrderedFoodImgLink="";
-            orderedFoodPrice="";
+            orderSectionContent = `
+             <div class="cart-all-container">
+            <h1 class="heading">Ordering Items</h1>
+          <ul class="cart-all-order">
+            <li class="order-cart-list">
+              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
+              <h1>Pizaa</h1>
+              <h1>35$</h1>
+            </li>
+            <li class="order-cart-list">
+              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
+              <h1>Pizaa</h1>
+              <h1>35$</h1>
+            </li>
+            <li class="order-cart-list">
+              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
+              <h1>Pizaa</h1>
+              <h1>35$</h1>
+            </li>
+            <li class="order-cart-list">
+              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
+              <h1>Pizaa</h1>
+              <h1>35$</h1>
+            </li>
+          </ul>
+          <div class="order-cart-price">
+            <h1>Total Price :- <span class="order-total-price">55350$</span></h1>
+          </div>
+        </div>
+            `
         }
         else
         {
@@ -396,13 +424,19 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
             OrderedFoodImgLink = parentdata.children[1].src;
             orderedFoodPrice = parentdata.children[0].children[0].children[1].innerText; 
 
-            const orderSectionContent = `
+            orderSectionContent = `
           <div class="order-left-container">
             <h1>Food Name:- <span class="ordered-foodName">${orderedFoodName}</span></h1>
             <img class="ordered-food-Img" src="${OrderedFoodImgLink}" alt="ordered-food-Img">
             <h1>Food Price:- <span class="ordered-foodPrice">${orderedFoodPrice}</span></h1>
           </div>
-          <form action="#" class="order-form">
+        `
+
+        
+    }
+
+    const formContent = `
+     <form action="#" class="order-form">
               <div class="user-deatils">
                 <div class="order-input">
                   <label for="">Your Name</label>
@@ -420,12 +454,10 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
               <button class="btn" type="submit">Order Now</button>
               </div>
             </form>
-        `
-
-        orderContainer.insertAdjacentHTML("afterbegin",orderSectionContent);
-
-        }
+    `
     
+    orderContainer.insertAdjacentHTML("afterbegin",orderSectionContent);
+    orderContainer.insertAdjacentHTML("beforeend",formContent);
 
         orderSection.classList.add("active");
     });
