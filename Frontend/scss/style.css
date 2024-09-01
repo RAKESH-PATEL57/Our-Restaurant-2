@@ -895,6 +895,16 @@ select option {
   -o-border-radius: 1em;
 }
 
+.ordering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid red;
+  width: 40%;
+  flex-wrap: wrap;
+}
+
 .order-left-container h1 {
   font-size: 2rem;
   color: var(--font-color);
