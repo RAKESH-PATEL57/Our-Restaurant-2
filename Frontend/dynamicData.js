@@ -107,7 +107,7 @@ viewdetailsBtn.forEach((dishDetails,index) => {
 
 function imageLink(product)
 {
-    let link = ((product.image).toString()).slice(1);
+    let link = ((product.image).toString()).slice(3);
 
     return link;
 }
@@ -317,7 +317,7 @@ filterReview.addEventListener("change", () => {
 
     var text = filterReview.options[filterReview.selectedIndex].text;
 
-    console.log(text);
+    // console.log(text);
     
     if(text == "Recent")
     {
@@ -366,27 +366,41 @@ let allBuyNowBtnS = document.querySelectorAll(".buyNowBtn");
 let orderSection = document.querySelector(".order");
 let orderContainer = document.querySelector(".order-container");
 
-
-let orderedFoodName = document.querySelector(".ordered-foodName");
-let OrderedFoodImg = document.querySelector(".ordered-food-Img");
-let orderedFoodPrice = document.querySelector(".ordered-foodPrice");
-
 let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
 
-allBuyNowBtnS.forEach((allBuyBtns) => {
+allBuyNowBtnS.forEach((allBuyBtns,index) => {
+    
     allBuyBtns.addEventListener("click", (e) => {
+        console.log(cartContent);
+        orderContainer.classList.add("ordering");
+        
         // console.log(e.target.parentElement);
         let parentdata = e.target.parentElement;
         // const imageLink = (parentdata.children[1].src).toString().slice(1);
-        const imageLink = parentdata.children[1].src;
-        const orderedFdName = parentdata.children[0].children[0].children[0].innerText;
-        const orderedFdPrice = parentdata.children[0].children[0].children[1].innerText;
+        let orderedFoodName = null;
+        let OrderedFoodImgLink = null;
+        let orderedFoodPrice = null;
+
         orderContainer.innerHTML = " ";
-        const orderSectionContent = `
+        
+        if(index === 0)
+        {
+            // orderContainer.insertAdjacentHTML("afterbegin",cartContent.innerHTML);
+            orderedFoodName="";
+            OrderedFoodImgLink="";
+            orderedFoodPrice="";
+        }
+        else
+        {
+            orderedFoodName = parentdata.children[0].children[0].children[0].innerText;
+            OrderedFoodImgLink = parentdata.children[1].src;
+            orderedFoodPrice = parentdata.children[0].children[0].children[1].innerText; 
+
+            const orderSectionContent = `
           <div class="order-left-container">
-            <h1>Food Name:- <span class="ordered-foodName">${orderedFdName}</span></h1>
-            <img class="ordered-food-Img" src="${imageLink}" alt="ordered-food-Img">
-            <h1>Food Price:- <span class="ordered-foodPrice">${orderedFdPrice}</span></h1>
+            <h1>Food Name:- <span class="ordered-foodName">${orderedFoodName}</span></h1>
+            <img class="ordered-food-Img" src="${OrderedFoodImgLink}" alt="ordered-food-Img">
+            <h1>Food Price:- <span class="ordered-foodPrice">${orderedFoodPrice}</span></h1>
           </div>
           <form action="#" class="order-form">
               <div class="user-deatils">
@@ -409,6 +423,9 @@ allBuyNowBtnS.forEach((allBuyBtns) => {
         `
 
         orderContainer.insertAdjacentHTML("afterbegin",orderSectionContent);
+
+        }
+    
 
         orderSection.classList.add("active");
     });
