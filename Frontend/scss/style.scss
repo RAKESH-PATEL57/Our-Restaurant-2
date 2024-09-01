@@ -52,7 +52,7 @@ html
     width: 95%;
     @include flexbox(flex,space-between,center,unset);
     font-size: 1.6rem;
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
 
 }
 
@@ -468,18 +468,31 @@ input:focus
     padding: 0rem 1rem;
 }
 
-.cart-order .Buy-Btn
+.cart-order .buyAllBtn
 {
-    background:var(--main-color);
-    color: var(--sfont-color);
+    background:transparent;
+
+    color: var(--font-color);
     border: 1px solid gray;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    padding: .5rem 1rem;
+    padding: .5rem 1.2rem;
     cursor: pointer;
+    transition: .3s linear;
+    -webkit-transition: .3s linear;
+    -moz-transition: .3s linear;
+    -ms-transition: .3s linear;
+    -o-transition: .3s linear;
+}
+
+.cart-order .buyAllBtn:hover
+{
+    background: var(--main-color);
+    color:var(--sfont-color);
+    box-shadow: 0rem 0rem 1rem var(--main-color);
 }
 
 // Cart section [[[[[[   end  ]]]]]]
@@ -1072,12 +1085,12 @@ select option
     width: 100%;
     // height: 100vh;
     // top: 0rem;
+    pointer-events: none;
     backdrop-filter: blur(2rem);
     background: transparent;
     z-index: 10000;
     @include flexbox(flex,center,center,unset);
     //opacity: 0;
-    pointer-events: none;
     transition: .2s ease-in-out;
     -webkit-transition: .2s ease-in-out;
     -moz-transition: .2s ease-in-out;
@@ -1122,17 +1135,6 @@ select option
     -moz-border-radius: 1em;
     -ms-border-radius: 1em;
     -o-border-radius: 1em;
-}
-
-.ordering
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border:2px solid red;
-    width: 40%;
-    flex-wrap: wrap;
 }
 
 .order-left-container h1
@@ -1198,4 +1200,101 @@ select option
     color: rgb(212, 212, 212);
 }
 
+// order from cart  *****************
+.order-container .cart-all-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 40rem;
+    position: relative;
+    box-shadow:inset 0rem 0rem 1rem gray;
+    gap: 2rem;
+}
+
+.cart-all-container .heading
+{
+    color: var(--main-color);
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+.cart-all-container .cart-all-order
+{
+    height:70%;
+    overflow-y: scroll;
+}
+
+.cart-all-container .cart-all-order::-webkit-scrollbar
+{
+    width: .5rem;
+    height: 100%;
+}
+
+.cart-all-container .cart-all-order::-webkit-scrollbar-track
+{
+    background: gray;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.cart-all-container .order-cart-list
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+    font-size: 1rem;
+    color: var(--font-color);
+    gap: 1rem;
+    border: 2px solid rgba(128, 128, 128, 0.132);
+}
+
+.order-cart-list img
+{
+    height: 8.5rem;
+    width: 8.5rem;
+}
+
+.cart-all-container .order-cart-price
+{
+    color: var(--font-color);
+    position: absolute;
+    right: 4%;
+    bottom: 5%;
+}
+
+.order-cart-price .order-total-price
+{
+    color: var(--main-color);
+}
+
+
+
+
 // <!--******************   Order  section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
+
+// <!--******************   Animations  section [[[[[[[[[[[[    Start     ]]]]]]]]]]]]   **************-->
+
+.targetBtns
+{
+    animation: targetBtns 1s linear alternate-reverse infinite;
+    -webkit-animation: targetBtns 1s linear alternate-reverse infinite;
+}
+
+@keyframes targetBtns
+{
+   0%,100%{
+    box-shadow: 0rem 0rem 0rem var(--main-color);
+   }
+   50%{
+    box-shadow: 0rem 0rem .5rem .2rem var(--main-color);
+    
+   }
+}
+// <!--******************   Animations  section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
