@@ -8,6 +8,7 @@ import recentReviews from "./jsonFiles/reviews.json" with {type: 'json'};
 let introDishesContainer = document.querySelector('.intro-dishes-container');
 let allDishesContainer = document.querySelector('.dishes-list');
 
+let orderedTotalCartPrice = 0;// (Initial value) // jab user cart kaa saaraa items order karegaa tab waha kaa jo total price hai usko dobara calculate naa karnaa pade isiliye 
 function ingradientsList(ingradientsArr)
 {
     // console.log(ingradientsArr)
@@ -162,6 +163,7 @@ if(localStorage.getItem('cart')) {
     displayDataInCart();
 } 
 
+
 function displayDataInCart()
 {
     cartContent.innerHTML = '';
@@ -198,6 +200,7 @@ function displayDataInCart()
 
     cartQuantityInd.innerText = totalQuantity;
     totalPrice.innerText = `${totalCartPrice}₹`;
+    orderedTotalCartPrice = `${totalCartPrice}₹`;  // jab user cart kaa saaraa items order karegaa tab waha kaa jo total price hai usko dobara calculate naa karnaa pade isiliye
 }
 
 cartContent.addEventListener('click', (event) => {
@@ -371,8 +374,7 @@ let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
 allBuyNowBtnS.forEach((allBuyBtns,index) => {
     
     allBuyBtns.addEventListener("click", (e) => {
-        console.log(cartContent);
-        orderContainer.classList.add("ordering");
+       
         
         // console.log(e.target.parentElement);
         let parentdata = e.target.parentElement;
@@ -384,36 +386,40 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
         let orderSectionContent = "";
 
         orderContainer.innerHTML = " ";
+
+        console.log();
+
+
         
         if(index === 0)
         {
+               
+            function creatingListForOrderSections()
+            {
+                let ln = cartContent.childNodes.length;
+                let listDatas = ``;
+
+                for(let i=0; i<ln; i++)
+                {
+                   listDatas += ` <li class="order-cart-list">
+                            <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
+                            <h1>Pizaa</h1>
+                            <h1>35$</h1>
+                            </li>`
+                }
+
+                return listDatas;
+              
+            }
+
             orderSectionContent = `
              <div class="cart-all-container">
             <h1 class="heading">Ordering Items</h1>
           <ul class="cart-all-order">
-            <li class="order-cart-list">
-              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
-              <h1>Pizaa</h1>
-              <h1>35$</h1>
-            </li>
-            <li class="order-cart-list">
-              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
-              <h1>Pizaa</h1>
-              <h1>35$</h1>
-            </li>
-            <li class="order-cart-list">
-              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
-              <h1>Pizaa</h1>
-              <h1>35$</h1>
-            </li>
-            <li class="order-cart-list">
-              <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
-              <h1>Pizaa</h1>
-              <h1>35$</h1>
-            </li>
+             ${creatingListForOrderSections()}
           </ul>
           <div class="order-cart-price">
-            <h1>Total Price :- <span class="order-total-price">55350$</span></h1>
+            <h1>Total Price :- <span class="order-total-price">${orderedTotalCartPrice}</span></h1>
           </div>
         </div>
             `
