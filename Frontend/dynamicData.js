@@ -73,8 +73,13 @@ const addCartDataToHTML = () => {
                              ${ingradientsList(product.ingradients)}
                          </ol>
                     </div>
-                    <button class="btn viewdetailsBtn">Ingradients</button>
-                    <button class="btn addToCartBtn">Add to cart</button>
+                    <div class="dishes-card-btns">
+                    <div class="dishes-details-cart-btns">
+                        <button class="btn viewdetailsBtn">Ingradients</button>
+                        <button class="btn addToCartBtn">Add to cart</button>
+                    </div>
+                    <button class="btn addToCartBtn">Buy Now</button>
+                    </div>
             `
             allDishesContainer.appendChild(allNewProduct);
         });
