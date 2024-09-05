@@ -718,6 +718,10 @@ input:focus {
   width: 50%;
 }
 
+.dishes-card-btns .buyNowBtn {
+  font-weight: 600;
+}
+
 .review {
   position: relative;
   min-height: 100vh;
