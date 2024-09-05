@@ -9,12 +9,13 @@ let introDishesContainer = document.querySelector('.intro-dishes-container');
 let allDishesContainer = document.querySelector('.dishes-list');
 
 let orderedTotalCartPrice = 0;// (Initial value) // jab user cart kaa saaraa items order karegaa tab waha kaa jo total price hai usko dobara calculate naa karnaa pade isiliye 
+let orderedTotalCartDishImageSrc =[];
+let orderedTotalCartDishName =[];
+let orderedTotalCartDishPrice =[];
+
 function ingradientsList(ingradientsArr)
 {
-    // console.log(ingradientsArr)
-    // ingradientsArr.forEach((e) => {
-    //    return `<p>Rakesh</p>`;
-    // });
+  
     let rk=``;
     for(let i=0;i<ingradientsArr.length;i++)
     {
@@ -78,7 +79,7 @@ const addCartDataToHTML = () => {
                         <button class="btn viewdetailsBtn">Ingradients</button>
                         <button class="btn addToCartBtn">Add to cart</button>
                     </div>
-                    <button class="btn addToCartBtn">Buy Now</button>
+                    <button class="btn buyNowBtn">Buy Now</button>
                     </div>
             `
             allDishesContainer.appendChild(allNewProduct);
@@ -130,12 +131,14 @@ let carts = [];
 
     addToCartBtn.forEach((value,index) => {
         addToCartBtn[index].addEventListener("click", (e) => {
-        let product_id = e.target.parentElement.dataset.id;
+            let product_id = e.target.parentElement.parentElement.parentElement.dataset.id;;
+   
         addToCart(product_id);
     });
    });
 
 const addToCart = (product_id) => {
+    
     let poitionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);  // if the dish is not present in cart it will return -1
     if(carts.length <=0 )
     {
@@ -180,6 +183,7 @@ function displayDataInCart()
             totalQuantity = totalQuantity + cart.quantity;
             let positionProduct = allDishes.findIndex((value) => value.id == cart.product_id);
             let info = allDishes[positionProduct];
+            
             totalCartPrice = totalCartPrice + (info.price * cart.quantity);
           
             let newCart = document.createElement('div');
@@ -187,12 +191,19 @@ function displayDataInCart()
             newCart.dataset.id = cart.product_id;
 
             // console.log(info);
+      
+            let imageSrc = imageLink(info);
+            let dishName = info.dishName;
+            let dishPrice = info.price * cart.quantity +"₹";
+            orderedTotalCartDishImageSrc.push(`./Frontend/${imageSrc}`);  // if user order all dishes from cart then it will helps to get source of all images that are present in cart
+            orderedTotalCartDishName.push(dishName); // if user order all dishes from cart then it will helps to get name of all dishes that are present in cart
+            orderedTotalCartDishPrice.push(dishPrice); // if user order all dishes from cart then it will helps to get price of each dish present in cart
 
             newCart.innerHTML = `
             <div class="cart-food-details">
-            <img class="cart-food-image" src="./Frontend/${imageLink(info)}" alt="">
-            <h2 class="cart-food-name">${info.dishName}</h2>
-                <p class="cart-food-price">${info.price * cart.quantity}₹</p>
+            <img class="cart-food-image" src="./Frontend/${imageSrc}" alt="">
+            <h2 class="cart-food-name">${dishName}</h2>
+                <p class="cart-food-price">${dishPrice}</p>
             </div>
             <div class="food-quantity">
                 <p class="dec-quantity quantity minus">-</p>
@@ -391,10 +402,6 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
         let orderSectionContent = "";
 
         orderContainer.innerHTML = " ";
-
-        console.log();
-
-
         
         if(index === 0)
         {
@@ -402,16 +409,26 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
             function creatingListForOrderSections()
             {
                 let ln = cartContent.childNodes.length;
+                console.log(ln);
+                
                 let listDatas = ``;
+
+                console.log(orderedTotalCartDishImageSrc);
+                console.log(orderedTotalCartDishName);
+                console.log(orderedTotalCartDishPrice);
 
                 for(let i=0; i<ln; i++)
                 {
                    listDatas += ` <li class="order-cart-list">
-                            <img src="./Frontend/images/dishes/dishes3.png" alt="order-cart-img">
-                            <h1>Pizaa</h1>
-                            <h1>35$</h1>
+                            <img src="${orderedTotalCartDishImageSrc[i]}" alt="order-cart-img">
+                            <h1>${orderedTotalCartDishName[i]}</h1>
+                            <h1>${orderedTotalCartDishPrice[i]}</h1>
                             </li>`
                 }
+
+                orderedTotalCartDishImageSrc= [];
+                orderedTotalCartDishName = [];
+                orderedTotalCartDishPrice = [];
 
                 return listDatas;
               
