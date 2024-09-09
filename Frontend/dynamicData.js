@@ -402,6 +402,7 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
         let orderSectionContent = "";
 
         orderContainer.innerHTML = " ";
+        console.log(index);
         
         if(index === 0)
         {
@@ -446,7 +447,7 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
         </div>
             `
         }
-        else
+        else if(index < 4)
         {
             orderedFoodName = parentdata.children[0].children[0].children[0].innerText;
             OrderedFoodImgLink = parentdata.children[1].src;
@@ -459,9 +460,21 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
             <h1>Food Price:- <span class="ordered-foodPrice">${orderedFoodPrice}</span></h1>
           </div>
         `
+        }
+        else
+        {
+            orderedFoodName = parentdata.parentElement.children[1].innerText;
+            OrderedFoodImgLink = parentdata.parentElement.children[0].src;
+            orderedFoodPrice = parentdata.parentElement.children[2].innerText;
 
-        
-    }
+            orderSectionContent = `
+            <div class="order-left-container">
+              <h1>Food Name:- <span class="ordered-foodName">${orderedFoodName}</span></h1>
+              <img class="ordered-food-Img" src="${OrderedFoodImgLink}" alt="ordered-food-Img">
+              <h1>Food Price:- <span class="ordered-foodPrice">${orderedFoodPrice}</span></h1>
+            </div>
+          `
+        }
 
     const formContent = `
      <form action="#" class="order-form">
