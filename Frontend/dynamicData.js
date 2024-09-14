@@ -387,6 +387,8 @@ let orderContainer = document.querySelector(".order-container");
 
 let closeBtnOrderSection= document.querySelector("#close-icon-order-section");
 
+let bodyScroll = document.querySelector("body");
+
 allBuyNowBtnS.forEach((allBuyBtns,index) => {
     
     allBuyBtns.addEventListener("click", (e) => {
@@ -501,11 +503,13 @@ allBuyNowBtnS.forEach((allBuyBtns,index) => {
     orderContainer.insertAdjacentHTML("beforeend",formContent);
 
         orderSection.classList.add("active");
+        bodyScroll.classList.add("stop-scrooling");
     });
 });
 
 closeBtnOrderSection.addEventListener("click", () => {
     orderSection.classList.remove("active");
+    bodyScroll.classList.remove("stop-scrooling");
 })
 
 // Order Section  [[[[[[[[[[[       End      ]]]]]]]]]]]
