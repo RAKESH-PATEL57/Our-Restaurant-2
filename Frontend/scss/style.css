@@ -844,7 +844,7 @@ select option {
 }
 
 .order {
-  position: absolute;
+  position: fixed;
   top: -50rem;
   height: 0;
   width: 100%;
