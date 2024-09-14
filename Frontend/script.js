@@ -93,6 +93,10 @@ logInBtn.addEventListener("click", (e) => {
 });
 
 
+// Order section      [[[[[[[[[[[     Start    ]]]]]]]]]]]
+
+// Order section      [[[[[[[[[[[      End     ]]]]]]]]]]]
+
 // Reviews section    [[[[[[[[[[[     Start    ]]]]]]]]]]]
 
 // let reviewBtn = document.querySelector(".review-btn");
