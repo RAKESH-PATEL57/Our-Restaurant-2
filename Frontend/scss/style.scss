@@ -1302,3 +1302,66 @@ select option
    }
 }
 // <!--******************   Animations  section [[[[[[[[[[[[    End     ]]]]]]]]]]]]   **************-->
+
+
+// <!--******************   Loader  section  [[[[[[[[[[[[    Start     ]]]]]]]]]]]]   **************-->
+.loader-container
+{
+    background: rgb(2, 0, 0);
+    position: absolute;
+    top: 0;
+    display: flex;
+    @include flexbox(flex,center,center,column);
+    height: 100vh;
+    width: 100vw;
+}
+
+.loader-container.loading-off
+{
+    display: none;
+}
+
+.loader-container #loader
+{
+    height: 12rem;
+    width: 12rem;
+}
+
+.loader-container .loading-text 
+{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 2.8rem;
+    display: inline-grid;
+}
+.loader-container .loading-text:before,
+.loader-container .loading-text:after 
+{
+    content:"Loading...";
+    color: var(--main-color);
+    grid-area: 1/1;
+    -webkit-mask:linear-gradient(90deg,#000 50%,#0000 0) 0 50%/2ch 100%;
+    animation: loader 1s infinite cubic-bezier(0.5,220,0.5,-220);
+    -webkit-animation: loader 1s infinite cubic-bezier(0.5,220,0.5,-220);
+}
+.loader-container .loading-text:after 
+{
+    -webkit-mask-position:1ch 50%;
+    --s:-1;
+}
+  
+@keyframes loader 
+{
+    100%{transform: translateY(calc(var(--s,1)*0.1%));}
+}
+  
+main
+{
+    display: none;
+}
+
+main.active
+{
+    display: block;
+}
+// <!--******************   Loader  section  [[[[[[[[[[[[     End      ]]]]]]]]]]]]   **************-->
