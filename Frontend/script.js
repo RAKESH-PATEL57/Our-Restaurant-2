@@ -93,9 +93,19 @@ logInBtn.addEventListener("click", (e) => {
 });
 
 
-// Order section      [[[[[[[[[[[     Start    ]]]]]]]]]]]
+// Loader section      [[[[[[[[[[[     Start    ]]]]]]]]]]]
+let mainContainer = document.querySelector("main");
+let loaderContainer = document.querySelector(".loader-container");
 
-// Order section      [[[[[[[[[[[      End     ]]]]]]]]]]]
+// let bgImage = document.querySelector(".bg");
+
+window.onload = () =>
+{
+    mainContainer.classList.add("active");
+    loaderContainer.classList.add("loading-off");
+}
+
+// Loader section      [[[[[[[[[[[      End     ]]]]]]]]]]]
 
 // Reviews section    [[[[[[[[[[[     Start    ]]]]]]]]]]]
 
