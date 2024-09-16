@@ -48,9 +48,49 @@ allSections.forEach((sec,index) => {
 });
 
 //****** */ log-in and sign-in section *********************
-let logInContainer = document.querySelector(".log-In");
-let signInContainer = document.querySelector(".sign-Up");
+const logInContainer = document.querySelector(".log-In");
+const signInContainer = document.querySelector(".sign-Up");
 
+const logInData = `
+        <h1 class="form-heading">Log-In</h1>
+        <div class="form-details">
+          <div class="input-container">
+                <label for="">Enter Your Name</label>
+                <input type="text" required>
+          </div>
+          <div class="input-container">
+                <label for="">Enter Your Password</label>
+                <input type="password" required>
+           </div>
+           <div class="form-submitBtn-container">
+                <button class="form-submitBtn btn" id="log-in-Btn" type="submit">Log-In</button>
+           </div>
+           <p class="form-desc">Don't have an account?<span class="user-toggle" id="create-account-btn">Create Account</span></p>
+        </div>`
+const signInData = `
+       <h1 class="form-heading">Sign-Up</h1>
+          <div class="form-details">
+              <div class="input-container">
+                  <label for="">Enter Your Name</label>
+                  <input type="text" required>
+                </div>
+                <div class="input-container">
+                  <label for="">Create Password</label>
+                  <input type="password" required>
+              </div>
+              <div class="input-container">
+                  <label for="">Conform Password</label>
+                  <input type="password" required>
+              </div>
+              <div class="form-submitBtn-container">
+                <button class="form-submitBtn btn" id="sign-up-Btn" type="submit">Create Account</button>
+              </div>
+              <p class="form-desc">Already have an account?<span class="user-toggle" id="log-in-span">Log In</span></p>
+            </div>
+`        
+
+logInContainer.insertAdjacentHTML("afterbegin", logInData);
+signInContainer.insertAdjacentHTML("afterbegin", signInData);
 
 let logInSignInForm = document.querySelector(".log-in-sign-in-form");
 let formOpenBtn = document.querySelector("#log-in-Btn-open");
