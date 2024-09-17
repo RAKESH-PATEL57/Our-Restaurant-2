@@ -392,8 +392,7 @@ let bodyScroll = document.querySelector("body");
 allBuyNowBtnS.forEach((allBuyBtns,index) => {
     
     allBuyBtns.addEventListener("click", (e) => {
-       
-        
+    
         // console.log(e.target.parentElement);
         let parentdata = e.target.parentElement;
         // const imageLink = (parentdata.children[1].src).toString().slice(1);
